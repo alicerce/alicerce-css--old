@@ -7,14 +7,17 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build": "stylus src/index.styl -o dist/index.css",
     "commitmsg": "validate-commit-msg",
-    "build": "stylus src/index.styl -o dist/index.css "
+    "lint": "stylint src"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.14.3",
+    "stylelint": "^9.1.1",
     "stylus": "^0.54.5",
     "validate-commit-msg": "^2.14.0"
   },

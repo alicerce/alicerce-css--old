@@ -7,6 +7,18 @@ Alicerce
 
 We use `stylus` as CSS preprocessor.
 
+```sh
+# Build
+yarn build
+
+# Lint
+yarn lint
+```
+
+### Code rules
+
+We use the linter [stylelint](https://stylelint.io/) with all the rules defined in the [.stylintrc](.stylintrc) file.
+
 ### Application Structure
 
 ```

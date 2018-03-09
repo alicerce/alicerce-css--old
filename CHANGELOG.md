@@ -27,7 +27,7 @@ Copy the code below and change accordingly to create a new entry.
 - Add Changelog.md
 - Add rules for commit messages with `commitizen`, `cz-conventional-changelog` and  `validate-commit-msg`
 - Add githook `commitmsg` with `husky`
-- Add `stylus` as CSS preprocessor
+- Add `stylus` as CSS preprocessor, with `stylelint` linter
 
 ### Changed
 ### Deprecated
