@@ -106,6 +106,7 @@
         "expect": "single",
         "error": true
     },
+    "reporter": "stylint-stylish",
     "reporterOptions": {
         "columns": ["lineData", "severity", "description", "rule"],
         "columnSplitter": "  ",
