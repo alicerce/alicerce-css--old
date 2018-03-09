@@ -12,7 +12,10 @@
     "commitmsg": "validate-commit-msg",
     "lint": "stylint src",
     "lint-watch": "yarn lint --watch",
-    "dev": "npm-run-all lint-watch build--watch"
+    "dev": "npm-run-all lint-watch build--watch",
+    "styleguide": "styleguide",
+    "styleguide-watch": "onchange 'src/**/*.styl' -- yarn styleguide",
+    "styleguide-server": "reload --browser  --dir ./docs"
   },
   "dependencies": {
   },
@@ -20,7 +23,10 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.14.3",
+    "markdown-styleguide-generator": "^2.0.4",
     "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "reload": "^2.2.2",
     "stylelint": "^9.1.1",
     "stylus": "^0.54.5",
     "validate-commit-msg": "^2.14.0"

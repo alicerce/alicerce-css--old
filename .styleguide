@@ -1,0 +1,24 @@
+{
+	"sgComment": "SG",
+	"srcFolder": "./src",
+	"outputFile": "./docs/index.html",
+	"templateFile": "./styleguide/template.html",
+	"themeFile": "./dist/index.css",
+	"highlightFolder": "./styleguide/",
+	"highlightStyle": "highlight",
+	"excludeDirs": [
+		"target",
+		"node_modules"
+	],
+	"fileExtensions": {
+		"css": true,
+		"styl": true
+	},
+	"walkerOptions": {
+		"followLinks": false
+	},
+	"customVars": {
+		"sampleVar": "Hello from customVars!"
+	},
+	"jqFile": "./styleguide/highlight.js"
+}
