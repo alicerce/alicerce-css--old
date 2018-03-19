@@ -1,0 +1,81 @@
+/* SG
+# Base/Typography
+[Eric Meyer’s “Reset CSS” 2.0](http://meyerweb.com/eric/tools/css/reset/)
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<p>Paragraph</p>
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600')
+
+fontFamily($font)
+  if $font is 'regular'
+    font-family var(--font-family--regular)
+  if $font is 'semibold'
+    font-family var(--font-family--semibold)
+    font-weight 400
+
+fontSize($size)
+  if $size is 'xx-large'
+    font-size var(--font-size--xx-large)
+    line-height 28px
+  if $size is 'x-large'
+    font-size var(--font-size--x-large)
+    line-height 26px
+  if $size is 'large'
+    font-size var(--font-size--large)
+    line-height 24px
+  if $size is 'medium'
+    font-size var(--font-size--medium)
+    line-height 21px
+  if $size is 'small'
+    font-size var(--font-size--small)
+    line-height 17px
+
+textColor($color)
+  if $size is 'normal'
+    color var(--color-text-normal)
+
+:root
+  --font-family--regular 'Source Sans Pro', sans-serif;
+  --font-family--semibold 'Source Sans Pro', sans-serif;
+  --font-size--xx-large 20px
+  --font-size--x-large 18px
+  --font-size--large 16px
+  --font-size--medium 14px
+  --font-size--small 12px
+  --color-text-normal #354052
+
+body
+  fontFamily('semibold')
+  fontSize('medium')
+  textColor('normal')
+
+// Headings
+h1, .is-text-h1
+  fontFamily('regular')
+  fontSize('xx-large')
+  textColor('normal')
+
+h2, .is-text-h2
+  fontFamily('regular')
+  fontSize('x-large')
+  textColor('normal')
+
+h3, .is-text-h3
+  fontFamily('regular')
+  fontSize('large')
+  textColor('normal')
+
+// Copy
+
+p, .is-text-p
+  fontFamily('regular')
+  fontSize('medium')
+  textColor('normal')
+
+// Lists
