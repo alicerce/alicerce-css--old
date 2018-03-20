@@ -86,6 +86,12 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 article,
 aside,
@@ -121,6 +127,67 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+:root {
+  --columns: 12;
+  --gutter: 14px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.columns {
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+.column {
+  display: block;
+  flex-basis: calc((100% / var(--columns)) * var(--column-width));
+  order: 0;
+  padding-left: calc(var(--gutter));
+  padding-right: calc(var(--gutter));
+}
+.column.is-1 {
+  --column-width: 1;
+}
+.column.is-2 {
+  --column-width: 2;
+}
+.column.is-3 {
+  --column-width: 3;
+}
+.column.is-4 {
+  --column-width: 4;
+}
+.column.is-5 {
+  --column-width: 5;
+}
+.column.is-6 {
+  --column-width: 6;
+}
+.column.is-7 {
+  --column-width: 7;
+}
+.column.is-8 {
+  --column-width: 8;
+}
+.column.is-9 {
+  --column-width: 9;
+}
+.column.is-10 {
+  --column-width: 10;
+}
+.column.is-11 {
+  --column-width: 11;
+}
+.column.is-12 {
+  --column-width: 12;
 }
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
 :root {
@@ -378,53 +445,83 @@ ol li:before,
   </div>
   <div class='top-bar-section'>
     <div class='top-bar-nav'>
-      <ul>
-          <li>
-              <a class="submenulink" href="#" data-section="Base">
-                Base
-              </a>
-              <ul class="submenu" data-submenu="Base">
-                  <li>
-                    <a href="#Base-Buttons">
-                      Buttons
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#Base-Reset">
-                      Reset
-                    </a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-              <a class="submenulink" href="#" data-section="Components">
-                Components
-              </a>
-              <ul class="submenu" data-submenu="Components">
-                  <li>
-                    <a href="#Components-Top_Bar">
-                      Top Bar
-                    </a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-              <a class="sectionlink" href="#" data-section="Typography">
-                Typography
-              </a>
-          </li>
-      </ul>
     </div>
   </div>
 </div>
 
 <div id="styleguide">
-    <div class="section" id="Base-Buttons" data-section="Base" data-heading="Buttons">
-      <div class="comment">
-        <h3 class="is-text-h1">
-          Base/Buttons
-        </h3>
-        <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+
+  <div class='container'>
+    <div class='columns'>
+
+      <div class='column is-2'>
+        <ul>
+            <li>
+                <a class="submenulink" href="#" data-section="Base">
+                  Base
+                </a>
+                <ul class="submenu" data-submenu="Base">
+                    <li>
+                      <a href="#Base-Buttons">
+                        Buttons
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Base-Grid">
+                        Grid
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Base-Reset">
+                        Reset
+                      </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="submenulink" href="#" data-section="Components">
+                  Components
+                </a>
+                <ul class="submenu" data-submenu="Components">
+                    <li>
+                      <a href="#Components-Top_Bar">
+                        Top Bar
+                      </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="submenulink" href="#" data-section="Typography">
+                  Typography
+                </a>
+                <ul class="submenu" data-submenu="Typography">
+                    <li>
+                      <a href="#Typography-Fonts">
+                        Fonts
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Typography-Headings">
+                        Headings
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Typography-Lists">
+                        Lists
+                      </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+      </div>
+
+      <div class='column is-10'>
+          <div class="section" id="Base-Buttons" data-section="Base" data-heading="Buttons">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Base/Buttons
+              </h3>
+              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <button class="button">Button</button>
 <button class="button is-hovered">Button</button>
 <button class="button is-focused">Button</button>
@@ -472,26 +569,36 @@ ol li:before,
 <button class="button is-orange is-focused">Button</button>
 <button class="button is-orange is-active">Button</button>
 <button class="button is-orange is-disabled">Button</button>
-      </div>
+            </div>
 
 
-    </div>
-    <div class="section" id="Base-Reset" data-section="Base" data-heading="Reset">
-      <div class="comment">
-        <h3 class="is-text-h1">
-          Base/Reset
-        </h3>
-        <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
-      </div>
+          </div>
+          <div class="section" id="Base-Grid" data-section="Base" data-heading="Grid">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Base/Grid
+              </h3>
+              <p>thanks to <a href="https://codepen.io/jacobberglund/pen/bwxxRy">CSS Grid with Variables</a> by @jacobberglund</p>
+            </div>
 
 
-    </div>
-    <div class="section" id="Components-Top_Bar" data-section="Components" data-heading="Top Bar">
-      <div class="comment">
-        <h3 class="is-text-h1">
-          Components/Top Bar
-        </h3>
-        <div class="top-bar">
+          </div>
+          <div class="section" id="Base-Reset" data-section="Base" data-heading="Reset">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Base/Reset
+              </h3>
+              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+            </div>
+
+
+          </div>
+          <div class="section" id="Components-Top_Bar" data-section="Components" data-heading="Top Bar">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Components/Top Bar
+              </h3>
+              <div class="top-bar">
   <div class="top-bar-section">
     <div class="top-bar-logo">
       Workspace
@@ -526,31 +633,46 @@ ol li:before,
     </div>
   </div>
 </div>
-      </div>
+            </div>
 
 
-    </div>
-    <div class="section" id="Typography-" data-section="Typography" data-heading="">
-      <div class="comment">
-        <h3 class="is-text-h1">
-          Typography
-        </h3>
-        <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+          </div>
+          <div class="section" id="Typography-Fonts" data-section="Typography" data-heading="Fonts">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Typography/Fonts
+              </h3>
+              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <p></p><h1>Heading 1</h1><p></p>
 <p></p><h2>Heading 2</h2><p></p>
 <h3>Heading 3</h3>
 
 <p>Paragraph</p>
-      </div>
+            </div>
 
 
-    </div>
-    <div class="section" id="Typography-Lists" data-section="Typography" data-heading="Lists">
-      <div class="comment">
-        <h3 class="is-text-h1">
-          Typography/Lists
-        </h3>
-        <h2 class="main-section-sg-by-emiloberg" id="section-Unordered_lists">Unordered lists</h2>
+          </div>
+          <div class="section" id="Typography-Headings" data-section="Typography" data-heading="Headings">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Typography/Headings
+              </h3>
+              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+<p></p><h1>Heading 1</h1><p></p>
+<p></p><h2>Heading 2</h2><p></p>
+<h3>Heading 3</h3>
+
+<p>Paragraph</p>
+            </div>
+
+
+          </div>
+          <div class="section" id="Typography-Lists" data-section="Typography" data-heading="Lists">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Typography/Lists
+              </h3>
+              <h2 class="main-section-sg-by-emiloberg" id="section-Unordered_lists">Unordered lists</h2>
 <ul>
   <li>List item 1</li>
   <li>List item 2</li>
@@ -577,8 +699,13 @@ ol li:before,
   <li>List item 4</li>
   <li>List item 5</li>
 </ol>
+            </div>
+
+
+          </div>
       </div>
-
-
     </div>
+
+  </div>
+
 </div>

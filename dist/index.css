@@ -85,6 +85,12 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 article,
 aside,
@@ -120,6 +126,67 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+:root {
+  --columns: 12;
+  --gutter: 14px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.columns {
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+.column {
+  display: block;
+  flex-basis: calc((100% / var(--columns)) * var(--column-width));
+  order: 0;
+  padding-left: calc(var(--gutter));
+  padding-right: calc(var(--gutter));
+}
+.column.is-1 {
+  --column-width: 1;
+}
+.column.is-2 {
+  --column-width: 2;
+}
+.column.is-3 {
+  --column-width: 3;
+}
+.column.is-4 {
+  --column-width: 4;
+}
+.column.is-5 {
+  --column-width: 5;
+}
+.column.is-6 {
+  --column-width: 6;
+}
+.column.is-7 {
+  --column-width: 7;
+}
+.column.is-8 {
+  --column-width: 8;
+}
+.column.is-9 {
+  --column-width: 9;
+}
+.column.is-10 {
+  --column-width: 10;
+}
+.column.is-11 {
+  --column-width: 11;
+}
+.column.is-12 {
+  --column-width: 12;
 }
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
 :root {
