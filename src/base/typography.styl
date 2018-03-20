@@ -20,21 +20,25 @@ fontFamily($font)
     font-weight 400
 
 fontSize($size)
+  if $size is 'xxx-large'
+    --font-size var(--font-size--xxx-large)
   if $size is 'xx-large'
-    font-size var(--font-size--xx-large)
-    line-height 28px
+    --font-size var(--font-size--xx-large)
   if $size is 'x-large'
-    font-size var(--font-size--x-large)
-    line-height 26px
+    --font-size var(--font-size--x-large)
   if $size is 'large'
-    font-size var(--font-size--large)
-    line-height 24px
+    --font-size var(--font-size--large)
   if $size is 'medium'
-    font-size var(--font-size--medium)
-    line-height 21px
+    --font-size var(--font-size--medium)
   if $size is 'small'
-    font-size var(--font-size--small)
-    line-height 17px
+    --font-size var(--font-size--small)
+  if $size is 'x-small'
+    --font-size var(--font-size--x-small)
+  if $size is 'xx-small'
+    --font-size var(--font-size--xx-small)
+
+    // font-size var(--font-size--xx-small)
+    // line-height calc(var(--font-size--xx-small) * var(--line-height-ratio))
 
 textColor($color)
   if $size is 'normal'
@@ -43,11 +47,18 @@ textColor($color)
 :root
   --font-family--regular 'Source Sans Pro', sans-serif
   --font-family--semibold 'Source Sans Pro', sans-serif
-  --font-size--xx-large 20px
-  --font-size--x-large 18px
-  --font-size--large 16px
-  --font-size--medium 14px
-  --font-size--small 12px
+
+  --font-size--xx-large 48px
+  --font-size--xx-large 32px
+  --font-size--x-large 24px
+  --font-size--large 18px
+  --font-size--medium 16px
+  --font-size--small 13px
+  --font-size--x-small 10px
+  --font-size--xx-small 9px
+  --font-size var(--font-size--medium)
+
+  --line-height-ratio 1.618
   --color-text-normal #354052
 
 body
@@ -91,8 +102,31 @@ h3, .is-text-h3
 
 p, .is-text-p
   fontFamily('regular')
-  fontSize('medium')
+  // fontSize('medium')
   textColor('normal')
+  font-size var(--font-size)
+  line-height calc(var(--font-size) * var(--line-height-ratio))
+
+  &.is-size--xx-small
+    fontSize(xx-small)
+
+  &.is-size--x-small
+    fontSize(x-small)
+
+  &.is-size--small
+    fontSize(small)
+
+  &.is-size--medium
+    fontSize(medium)
+
+  &.is-size--large
+    fontSize(large)
+
+  &.is-size--x-large
+    fontSize(x-large)
+
+  &.is-size--xx-large
+    fontSize(xx-large)
 
 /* SG
 # Typography/Lists
