@@ -197,42 +197,71 @@
   :root {
     --font-family--regular: 'Source Sans Pro', sans-serif;
     --font-family--semibold: 'Source Sans Pro', sans-serif;
-    --font-size--xx-large: 20px;
-    --font-size--x-large: 18px;
-    --font-size--large: 16px;
-    --font-size--medium: 14px;
-    --font-size--small: 12px;
+    --font-size--xx-large: 48px;
+    --font-size--xx-large: 32px;
+    --font-size--x-large: 24px;
+    --font-size--large: 18px;
+    --font-size--medium: 16px;
+    --font-size--small: 13px;
+    --font-size--x-small: 10px;
+    --font-size--xx-small: 9px;
+    --font-size: var(--font-size--medium);
+    --line-height-ratio: 1.618;
     --color-text-normal: #354052;
   }
   body {
     font-family: var(--font-family--semibold);
     font-weight: 400;
-    font-size: var(--font-size--medium);
-    line-height: 21px;
+    --font-size: var(--font-size--medium);
   }
   h1,
   .is-text-h1 {
     font-family: var(--font-family--regular);
-    font-size: var(--font-size--xx-large);
-    line-height: 28px;
+    --font-size: var(--font-size--xx-large);
   }
   h2,
   .is-text-h2 {
     font-family: var(--font-family--regular);
-    font-size: var(--font-size--x-large);
-    line-height: 26px;
+    --font-size: var(--font-size--x-large);
   }
   h3,
   .is-text-h3 {
     font-family: var(--font-family--regular);
-    font-size: var(--font-size--large);
-    line-height: 24px;
+    --font-size: var(--font-size--large);
   }
   p,
   .is-text-p {
     font-family: var(--font-family--regular);
-    font-size: var(--font-size--medium);
-    line-height: 21px;
+    font-size: var(--font-size);
+    line-height: calc(var(--font-size) * var(--line-height-ratio));
+  }
+  p.is-size--xx-small,
+  .is-text-p.is-size--xx-small {
+    --font-size: var(--font-size--xx-small);
+  }
+  p.is-size--x-small,
+  .is-text-p.is-size--x-small {
+    --font-size: var(--font-size--x-small);
+  }
+  p.is-size--small,
+  .is-text-p.is-size--small {
+    --font-size: var(--font-size--small);
+  }
+  p.is-size--medium,
+  .is-text-p.is-size--medium {
+    --font-size: var(--font-size--medium);
+  }
+  p.is-size--large,
+  .is-text-p.is-size--large {
+    --font-size: var(--font-size--large);
+  }
+  p.is-size--x-large,
+  .is-text-p.is-size--x-large {
+    --font-size: var(--font-size--x-large);
+  }
+  p.is-size--xx-large,
+  .is-text-p.is-size--xx-large {
+    --font-size: var(--font-size--xx-large);
   }
   ul,
   .is-ul,
@@ -300,6 +329,14 @@
     line-height: var(--line-height);
     padding: var(--padding);
     transition: all 0.2s linear;
+  }
+  .button.is-rounded {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    padding: 0;
+    border-radius: 50%;
   }
   .button.is-green {
     --background-image: linear-gradient(-180deg, #39b54a 0%, #34aa44 98%);
@@ -390,7 +427,7 @@
     opacity: 0.5;
   }
   .icon {
-    --icon-size: 1.5rem;
+    --icon-size: 1em;
     align-items: center;
     display: inline-flex;
     justify-content: center;
@@ -402,24 +439,26 @@
     height: var(--icon-size) !important;
     display: block;
     color: var(--background-color);
+    transform: translateY(1px);
+    transform: translateY(calc(var(--font-size) / 10));
   }
   .icon.is-small {
-    --icon-size: 1rem;
+    --icon-size: 1em;
   }
   .icon.is-medium {
-    --icon-size: 2rem;
+    --icon-size: 2em;
   }
   .icon.is-large {
-    --icon-size: 3rem;
+    --icon-size: 3em;
   }
   .icon.is-black {
     --background-color: #516173;
   }
   .icon.is-blue {
-    --background-color: #36af47;
+    --background-color: #1991eb;
   }
   .icon.is-green {
-    --background-color: #1991eb;
+    --background-color: #36af47;
   }
   .icon.is-grey--dark {
     --background-color: #c2cad4;
@@ -787,6 +826,30 @@
 <button class="button is-orange is-focused">Button</button>
 <button class="button is-orange is-active">Button</button>
 <button class="button is-orange is-disabled">Button</button>
+
+<h2 class="main-section-sg-by-emiloberg" id="section-Round_buttons">Round buttons</h2>
+<button class="button is-rounded">A</button>
+<button class="button is-rounded is-black">B</button>
+<button class="button is-rounded is-blue">C</button>
+<button class="button is-rounded is-green">D</button>
+<button class="button is-rounded is-grey">E</button>
+<button class="button is-rounded is-grey">F</button>
+<button class="button is-rounded is-orange">G</button>
+<button class="button is-rounded is-red">H</button>
+
+<h2 class="main-section-sg-by-emiloberg" id="section-Icon_round_buttons">Icon round buttons</h2>
+<button class="button is-rounded">
+  <span class="icon">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+</button>
+<button class="button is-rounded is-black">B</button>
+<button class="button is-rounded is-blue">C</button>
+<button class="button is-rounded is-green">D</button>
+<button class="button is-rounded is-grey">E</button>
+<button class="button is-rounded is-grey">F</button>
+<button class="button is-rounded is-orange">G</button>
+<button class="button is-rounded is-red">H</button>
               </div>
 
 
@@ -855,6 +918,62 @@
 <span class="icon is-medium is-red">
   <i class="fas fa-camera-retro"></i>
 </span></p>
+<p>
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--xx-small">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--x-small">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--small">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--medium">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--large">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--x-large">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--xx-large">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
               </div>
 
 

@@ -47,11 +47,77 @@ Compatible with the following icon font libraries:
   <i class="fas fa-camera-retro"></i>
 </span>
 
+<p>
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--xx-small">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--x-small">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--small">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--medium">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--large">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--x-large">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+<p class="is-size--xx-large">
+  some text
+  <span class="icon is-blue">
+    <i class="fas fa-camera-retro"></i>
+  </span>
+  with a icon
+</p>
+
+
+
+
+
+
+
+
+
+
 
 */
 
 .icon
-  --icon-size 1.5rem
+  --icon-size 1em
 
   align-items center
   display inline-flex
@@ -64,24 +130,26 @@ Compatible with the following icon font libraries:
     height var(--icon-size) !important
     display block
     color var(--background-color)
+    transform translateY(1px)
+    transform translateY(calc(var(--font-size) / 10))
 
   &.is-small
-    --icon-size 1rem
+    --icon-size 1em
 
   &.is-medium
-    --icon-size 2rem
+    --icon-size 2em
 
   &.is-large
-    --icon-size 3rem
+    --icon-size 3em
 
   &.is-black
     --background-color #516173
 
   &.is-blue
-    --background-color #36AF47
+    --background-color #1991EB
 
   &.is-green
-    --background-color #1991EB
+    --background-color #36AF47
 
   &.is-grey--dark
     --background-color #C2CAD4
