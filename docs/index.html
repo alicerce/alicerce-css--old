@@ -385,6 +385,46 @@ ol li:before,
   color: var(--text-color--disabled);
   opacity: 0.5;
 }
+.label {
+  --background-color: #dfe1e5;
+  --text-color: #354052;
+  background-color: var(--background-color);
+  border-radius: 3px;
+  font-family: SourceSansPro-Semibold;
+  font-size: 10px;
+  line-height: 13px;
+  color: var(--text-color);
+  padding: 4px 10px;
+  display: inline-block;
+}
+.label.is-black {
+  --background-color: #516173;
+  --text-color: #fff;
+}
+.label.is-blue {
+  --background-color: #36af47;
+  --text-color: #fff;
+}
+.label.is-green {
+  --background-color: #1991eb;
+  --text-color: #fff;
+}
+.label.is-grey--dark {
+  --background-color: #c2cad4;
+  --text-color: #fff;
+}
+.label.is-grey--light {
+  --background-color: #dfe1e5;
+  --text-color: #354052;
+}
+.label.is-orange {
+  --background-color: #f7981c;
+  --text-color: #fff;
+}
+.label.is-red {
+  --background-color: #ed1c24;
+  --text-color: #fff;
+}
 .notification {
   --background-color: #dfe1e5;
   --text-color: #354052;
@@ -519,6 +559,11 @@ ol li:before,
                         Top Bar
                       </a>
                     </li>
+                    <li>
+                      <a href="#Components-labels">
+                        labels
+                      </a>
+                    </li>
                 </ul>
             </li>
             <li>
@@ -526,6 +571,11 @@ ol li:before,
                   Typography
                 </a>
                 <ul class="submenu" data-submenu="Typography">
+                    <li>
+                      <a href="#Typography-Copy">
+                        Copy
+                      </a>
+                    </li>
                     <li>
                       <a href="#Typography-Fonts">
                         Fonts
@@ -693,6 +743,50 @@ ol li:before,
     </div>
   </div>
 </div>
+            </div>
+
+
+          </div>
+          <div class="section" id="Components-labels" data-section="Components" data-heading="labels">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Components/labels
+              </h3>
+              <div class="label">
+  No Style
+</div>
+<div class="label is-black">
+  Black
+</div>
+<div class="label is-blue">
+  Blue
+</div>
+<div class="label is-green">
+  Green
+</div>
+<div class="label is-grey--dark">
+  Grey dark
+</div>
+<div class="label is-grey--light">
+  Grey light
+</div>
+<div class="label is-orange">
+  Orange
+</div>
+<div class="label is-red">
+  Red
+</div>
+            </div>
+
+
+          </div>
+          <div class="section" id="Typography-Copy" data-section="Typography" data-heading="Copy">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Typography/Copy
+              </h3>
+              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+<p>Paragraph</p>
             </div>
 
 
