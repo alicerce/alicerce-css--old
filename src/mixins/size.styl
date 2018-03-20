@@ -1,0 +1,11 @@
+size($height, $width, $display = inline-block)
+  display $display
+  height $height
+  width $width
+
+square($size)
+  size($size, $size)
+
+circle($size)
+  square($size)
+  border-radius 50%
