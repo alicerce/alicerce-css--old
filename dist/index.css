@@ -450,6 +450,82 @@ ol li:before,
   --background-color: #ed1c24;
   --text-color: #fff;
 }
+.tabs {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #2ea2f8;
+  box-shadow: inset 0px -1px 0px #dfe2e5;
+}
+.tabs ul {
+  list-style: none;
+  margin: 0;
+  pading: 0;
+  display: flex;
+}
+.tabs li {
+  font-family: SourceSansPro-Regular;
+  font-size: 16px;
+  color: var(--text-color);
+  display: inline-block;
+}
+.tabs li:before {
+  display: none;
+}
+.tabs li.is-active {
+  color: var(--text-color--active);
+}
+.tabs li.is-active a {
+  box-shadow: inset 0px -3px 0px var(--border-color--active);
+}
+.tabs li a {
+  padding: 19px 0;
+  margin: 0 15px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.tabs.is-black,
+.tabs .is-black {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #516173;
+}
+.tabs.is-blue,
+.tabs .is-blue {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #36af47;
+}
+.tabs.is-green,
+.tabs .is-green {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #1991eb;
+}
+.tabs.is-grey--dark,
+.tabs .is-grey--dark {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #c2cad4;
+}
+.tabs.is-grey--light,
+.tabs .is-grey--light {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #dfe1e5;
+}
+.tabs.is-orange,
+.tabs .is-orange {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #f7981c;
+}
+.tabs.is-red,
+.tabs .is-red {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #ed1c24;
+}
 .top-bar {
   --background-color: #2ea2f8;
   display: flex;

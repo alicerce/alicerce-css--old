@@ -1,0 +1,142 @@
+/* SG
+# Components/Tabs
+
+<div class="tabs">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-black">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-blue">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-green">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-grey--dark">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-grey--light">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-orange">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-red">
+  <ul>
+    <li class="is-active"><a href='#'>Tab1</a></li>
+    <li><a href='#'>Tab 2</a></li>
+    <li><a href='#'>Tab 3</a></li>
+  </ul>
+</div>
+
+<div class="tabs">
+  <ul>
+    <li class="is-active"><a href='#'>Default</a></li>
+    <li class="is-active is-black"><a href='#'>Black</a></li>
+    <li class="is-active is-blue"><a href='#'>Blue</a></li>
+    <li class="is-active is-green"><a href='#'>Green</a></li>
+    <li class="is-active is-grey--dark"><a href='#'>Grey dark</a></li>
+    <li class="is-active is-grey--light"><a href='#'>Grey light</a></li>
+    <li class="is-active is-orange"><a href='#'>Orange</a></li>
+    <li class="is-active is-red"><a href='#'>Red</a></li>
+  </ul>
+</div>
+
+
+*/
+
+.tabs
+  --text-color #7F8FA4
+  --text-color--active #354052
+  --border-color--active #2EA2F8
+  box-shadow inset 0px -1px 0px #DFE2E5
+  ul
+    list-style none
+    margin 0
+    pading 0
+    display flex
+
+  li
+    font-family SourceSansPro-Regular
+    font-size 16px
+    color var(--text-color)
+    display inline-block
+
+    &:before
+      display none
+
+    &.is-active
+      color var(--text-color--active)
+      a
+        box-shadow inset 0px -3px 0px var(--border-color--active)
+
+    a
+      padding 19px 0
+      margin 0 15px
+      display block
+      text-decoration none
+      color inherit
+
+  &.is-black, .is-black
+    --text-color #7F8FA4
+    --text-color--active #354052
+    --border-color--active #516173
+
+  &.is-blue, .is-blue
+    --text-color #7F8FA4
+    --text-color--active #354052
+    --border-color--active #36AF47
+
+  &.is-green, .is-green
+    --text-color #7F8FA4
+    --text-color--active #354052
+    --border-color--active #1991EB
+
+  &.is-grey--dark, .is-grey--dark
+    --text-color #7F8FA4
+    --text-color--active #354052
+    --border-color--active #C2CAD4
+
+  &.is-grey--light, .is-grey--light
+    --text-color #7F8FA4
+    --text-color--active #354052
+    --border-color--active #DFE1E5
+
+  &.is-orange, .is-orange
+    --text-color #7F8FA4
+    --text-color--active #354052
+    --border-color--active #F7981C
+
+  &.is-red, .is-red
+    --text-color #7F8FA4
+    --text-color--active #354052
+    --border-color--active #ED1C24

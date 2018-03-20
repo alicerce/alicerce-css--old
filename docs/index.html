@@ -451,6 +451,82 @@ ol li:before,
   --background-color: #ed1c24;
   --text-color: #fff;
 }
+.tabs {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #2ea2f8;
+  box-shadow: inset 0px -1px 0px #dfe2e5;
+}
+.tabs ul {
+  list-style: none;
+  margin: 0;
+  pading: 0;
+  display: flex;
+}
+.tabs li {
+  font-family: SourceSansPro-Regular;
+  font-size: 16px;
+  color: var(--text-color);
+  display: inline-block;
+}
+.tabs li:before {
+  display: none;
+}
+.tabs li.is-active {
+  color: var(--text-color--active);
+}
+.tabs li.is-active a {
+  box-shadow: inset 0px -3px 0px var(--border-color--active);
+}
+.tabs li a {
+  padding: 19px 0;
+  margin: 0 15px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.tabs.is-black,
+.tabs .is-black {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #516173;
+}
+.tabs.is-blue,
+.tabs .is-blue {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #36af47;
+}
+.tabs.is-green,
+.tabs .is-green {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #1991eb;
+}
+.tabs.is-grey--dark,
+.tabs .is-grey--dark {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #c2cad4;
+}
+.tabs.is-grey--light,
+.tabs .is-grey--light {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #dfe1e5;
+}
+.tabs.is-orange,
+.tabs .is-orange {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #f7981c;
+}
+.tabs.is-red,
+.tabs .is-red {
+  --text-color: #7f8fa4;
+  --text-color--active: #354052;
+  --border-color--active: #ed1c24;
+}
 .top-bar {
   --background-color: #2ea2f8;
   display: flex;
@@ -552,6 +628,11 @@ ol li:before,
                     <li>
                       <a href="#Components-Notifications">
                         Notifications
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Components-Tabs">
+                        Tabs
                       </a>
                     </li>
                     <li>
@@ -699,6 +780,84 @@ ol li:before,
   Error. Can&#x2019;t connect to the platform.
 </div>
 <br></p>
+            </div>
+
+
+          </div>
+          <div class="section" id="Components-Tabs" data-section="Components" data-heading="Tabs">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Components/Tabs
+              </h3>
+              <div class="tabs">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-black">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-blue">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-green">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-grey--dark">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-grey--light">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-orange">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+<div class="tabs is-red">
+  <ul>
+    <li class="is-active"><a href="#">Tab1</a></li>
+    <li><a href="#">Tab 2</a></li>
+    <li><a href="#">Tab 3</a></li>
+  </ul>
+</div>
+
+<div class="tabs">
+  <ul>
+    <li class="is-active"><a href="#">Default</a></li>
+    <li class="is-active is-black"><a href="#">Black</a></li>
+    <li class="is-active is-blue"><a href="#">Blue</a></li>
+    <li class="is-active is-green"><a href="#">Green</a></li>
+    <li class="is-active is-grey--dark"><a href="#">Grey dark</a></li>
+    <li class="is-active is-grey--light"><a href="#">Grey light</a></li>
+    <li class="is-active is-orange"><a href="#">Orange</a></li>
+    <li class="is-active is-red"><a href="#">Red</a></li>
+  </ul>
+</div>
             </div>
 
 
