@@ -1,41 +1,50 @@
 {{> theme}}
 {{> highlight}}
 
-<div id="styleguide-menu">
-  <ul>
-    {{#each menu}}
-      <li>
-        {{#if headings.0.name}}
-          <a class="submenulink" href="#" data-section="{{name}}">
-            {{name}}
-          </a>
-          <ul class="submenu" data-submenu="{{../name}}">
-            {{#each headings}}
-              <li>
-                <a href="#{{id}}">
-                  {{name}}
-                </a>
-              </li>
-            {{/each}}
-          </ul>
-        {{/if}}
-        {{#unless headings.0.name}}
-          <a class="sectionlink" href="#" data-section="{{name}}">
-            {{name}}
-          </a>
-        {{/unless}}
-      </li>
-    {{/each}}
-  </ul>
+<div class='top-bar'>
+  <div class='top-bar-section'>
+    <div class='top-bar-logo'>
+      Styleguide
+    </div>
+  </div>
+  <div class='top-bar-section'>
+    <div class='top-bar-nav'>
+      <ul>
+        {{#each menu}}
+          <li>
+            {{#if headings.0.name}}
+              <a class="submenulink" href="#" data-section="{{name}}">
+                {{name}}
+              </a>
+              <ul class="submenu" data-submenu="{{../name}}">
+                {{#each headings}}
+                  <li>
+                    <a href="#{{id}}">
+                      {{name}}
+                    </a>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+            {{#unless headings.0.name}}
+              <a class="sectionlink" href="#" data-section="{{name}}">
+                {{name}}
+              </a>
+            {{/unless}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 </div>
 
 <div id="styleguide">
   {{#each sections}}
     <div class="section" id="{{id}}" data-section="{{section}}" data-heading="{{heading}}">
       <div class="comment">
-        <h1>
+        <h3 class="is-text-h1">
           {{section}}{{#if heading}}/{{heading}}{{/if}}
-        </h1>
+        </h3>
         {{{comment}}}
       </div>
 
