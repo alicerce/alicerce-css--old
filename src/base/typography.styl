@@ -48,7 +48,7 @@ textColor($color)
   --font-family--regular 'Source Sans Pro', sans-serif
   --font-family--semibold 'Source Sans Pro', sans-serif
 
-  --font-size--xx-large 48px
+  --font-size--xxx-large 48px
   --font-size--xx-large 32px
   --font-size--x-large 24px
   --font-size--large 18px
@@ -64,6 +64,7 @@ textColor($color)
 body
   fontFamily('semibold')
   fontSize('medium')
+  font-size var(--font-size)
   textColor('normal')
 
 /* SG
@@ -77,19 +78,27 @@ body
 <p>Paragraph</p>
 
 */
+h1, h2, h3, h4, h5, h6
+  font-size var(--font-size)
+
 h1, .is-text-h1
   fontFamily('regular')
-  fontSize('xx-large')
+  fontSize('xxx-large')
   textColor('normal')
 
 h2, .is-text-h2
   fontFamily('regular')
-  fontSize('x-large')
+  fontSize('xx-large')
   textColor('normal')
 
 h3, .is-text-h3
   fontFamily('regular')
   fontSize('large')
+  textColor('normal')
+
+h4, .is-text-h4
+  fontFamily('regular')
+  fontSize('medium')
   textColor('normal')
 
 /* SG

@@ -192,7 +192,7 @@ table {
 :root {
   --font-family--regular: 'Source Sans Pro', sans-serif;
   --font-family--semibold: 'Source Sans Pro', sans-serif;
-  --font-size--xx-large: 48px;
+  --font-size--xxx-large: 48px;
   --font-size--xx-large: 32px;
   --font-size--x-large: 24px;
   --font-size--large: 18px;
@@ -208,21 +208,35 @@ body {
   font-family: var(--font-family--semibold);
   font-weight: 400;
   --font-size: var(--font-size--medium);
+  font-size: var(--font-size);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size);
 }
 h1,
 .is-text-h1 {
   font-family: var(--font-family--regular);
-  --font-size: var(--font-size--xx-large);
+  --font-size: var(--font-size--xxx-large);
 }
 h2,
 .is-text-h2 {
   font-family: var(--font-family--regular);
-  --font-size: var(--font-size--x-large);
+  --font-size: var(--font-size--xx-large);
 }
 h3,
 .is-text-h3 {
   font-family: var(--font-family--regular);
   --font-size: var(--font-size--large);
+}
+h4,
+.is-text-h4 {
+  font-family: var(--font-family--regular);
+  --font-size: var(--font-size--medium);
 }
 p,
 .is-text-p {
