@@ -1,79 +1,91 @@
-{{> theme}}
-{{> highlight}}
-
-<div class='top-bar'>
-  <div class='top-bar-section'>
-    <div class='top-bar-logo'>
-      Styleguide
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  {{> theme}}
+  {{> highlight}}
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class='top-bar'>
+    <div class='top-bar-section'>
+      <div class='top-bar-logo'>
+        Styleguide
+      </div>
+    </div>
+    <div class='top-bar-section'>
+      <div class='top-bar-nav'>
+      </div>
     </div>
   </div>
-  <div class='top-bar-section'>
-    <div class='top-bar-nav'>
-    </div>
-  </div>
-</div>
 
-<div id="styleguide">
+  <div id="styleguide">
 
-  <div class='container'>
-    <div class='columns'>
+    <div class='container'>
+      <div class='columns'>
 
-      <div class='column is-2'>
-        <ul>
-          {{#each menu}}
-            <li>
-              {{#if headings.0.name}}
-                <a class="submenulink" href="#" data-section="{{name}}">
-                  {{name}}
-                </a>
-                <ul class="submenu" data-submenu="{{../name}}">
-                  {{#each headings}}
-                    <li>
-                      <a href="#{{id}}">
-                        {{name}}
-                      </a>
-                    </li>
-                  {{/each}}
-                </ul>
+        <div class='column is-2'>
+          <ul>
+            {{#each menu}}
+              <li>
+                {{#if headings.0.name}}
+                  <a class="submenulink" href="#" data-section="{{name}}">
+                    {{name}}
+                  </a>
+                  <ul class="submenu" data-submenu="{{../name}}">
+                    {{#each headings}}
+                      <li>
+                        <a href="#{{id}}">
+                          {{name}}
+                        </a>
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+                {{#unless headings.0.name}}
+                  <a class="sectionlink" href="#" data-section="{{name}}">
+                    {{name}}
+                  </a>
+                {{/unless}}
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class='column is-10'>
+          {{#each sections}}
+            <div class="section" id="{{id}}" data-section="{{section}}" data-heading="{{heading}}">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  {{section}}{{#if heading}}/{{heading}}{{/if}}
+                </h3>
+                {{{comment}}}
+              </div>
+
+              {{#if code}}
+                <div class="result">
+                  {{{code}}}
+                </div>
               {{/if}}
-              {{#unless headings.0.name}}
-                <a class="sectionlink" href="#" data-section="{{name}}">
-                  {{name}}
-                </a>
-              {{/unless}}
-            </li>
-          {{/each}}
-        </ul>
-      </div>
 
-      <div class='column is-10'>
-        {{#each sections}}
-          <div class="section" id="{{id}}" data-section="{{section}}" data-heading="{{heading}}">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                {{section}}{{#if heading}}/{{heading}}{{/if}}
-              </h3>
-              {{{comment}}}
+              {{#if markup}}
+                <div class="markup hljs">
+                  <pre>
+                    {{{markup}}}
+                  </pre>
+                </div>
+              {{/if}}
             </div>
-
-            {{#if code}}
-              <div class="result">
-                {{{code}}}
-              </div>
-            {{/if}}
-
-            {{#if markup}}
-              <div class="markup hljs">
-                <pre>
-                  {{{markup}}}
-                </pre>
-              </div>
-            {{/if}}
-          </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
+
     </div>
 
   </div>
+</body>
+</html>
 
-</div>
+
+

@@ -1,689 +1,745 @@
-<style>
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-:root {
-  --columns: 12;
-  --gutter: 14px;
-}
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.columns {
-  align-content: stretch;
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 100%;
-}
-.column {
-  display: block;
-  flex-basis: calc((100% / var(--columns)) * var(--column-width));
-  order: 0;
-  padding-left: calc(var(--gutter));
-  padding-right: calc(var(--gutter));
-}
-.column.is-1 {
-  --column-width: 1;
-}
-.column.is-2 {
-  --column-width: 2;
-}
-.column.is-3 {
-  --column-width: 3;
-}
-.column.is-4 {
-  --column-width: 4;
-}
-.column.is-5 {
-  --column-width: 5;
-}
-.column.is-6 {
-  --column-width: 6;
-}
-.column.is-7 {
-  --column-width: 7;
-}
-.column.is-8 {
-  --column-width: 8;
-}
-.column.is-9 {
-  --column-width: 9;
-}
-.column.is-10 {
-  --column-width: 10;
-}
-.column.is-11 {
-  --column-width: 11;
-}
-.column.is-12 {
-  --column-width: 12;
-}
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
-:root {
-  --font-family--regular: 'Source Sans Pro', sans-serif;
-  --font-family--semibold: 'Source Sans Pro', sans-serif;
-  --font-size--xx-large: 20px;
-  --font-size--x-large: 18px;
-  --font-size--large: 16px;
-  --font-size--medium: 14px;
-  --font-size--small: 12px;
-  --color-text-normal: #354052;
-}
-body {
-  font-family: var(--font-family--semibold);
-  font-weight: 400;
-  font-size: var(--font-size--medium);
-  line-height: 21px;
-}
-h1,
-.is-text-h1 {
-  font-family: var(--font-family--regular);
-  font-size: var(--font-size--xx-large);
-  line-height: 28px;
-}
-h2,
-.is-text-h2 {
-  font-family: var(--font-family--regular);
-  font-size: var(--font-size--x-large);
-  line-height: 26px;
-}
-h3,
-.is-text-h3 {
-  font-family: var(--font-family--regular);
-  font-size: var(--font-size--large);
-  line-height: 24px;
-}
-p,
-.is-text-p {
-  font-family: var(--font-family--regular);
-  font-size: var(--font-size--medium);
-  line-height: 21px;
-}
-ul,
-.is-ul,
-ol,
-.is-ol {
-  margin-left: 26px;
-  font-size: 14px;
-  line-height: 30px;
-  font-family: SourceSansPro-Semibold;
-  color: #354052;
-}
-ul,
-.is-ul {
-  list-style: none;
-}
-ul li:before,
-.is-ul li:before {
-  background-color: rgba(53,64,82,0.5);
-  content: '';
-  display: inline-block;
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  margin-right: 14px;
-}
-ol,
-.is-ol {
-  counter-reset: section;
-  list-style-type: none;
-}
-ol li:before,
-.is-ol li:before {
-  color: #7f8fa4;
-  content: counters(section, '-') '.';
-  counter-increment: section;
-  font-family: SourceSansPro-Regular;
-  margin-right: 14px;
-}
-.button {
-  --border-color: #ced0da;
-  --border-color--hover: var(--border-color);
-  --border-color--active: var(--border-color);
-  --border-color--disabled: #dfe3e9;
-  --background-image: linear-gradient(0deg, #f2f4f7 0%, #fff 100%);
-  --background-image--hover: linear-gradient(0deg, #eaeef3 0%, #fff 100%);
-  --background-image--active: linear-gradient(-1deg, #e0e4e8 0%, #f2f7fa 97%);
-  --background-image--disabled: linear-gradient(0, #e9edf1 0%, #e9edf1 100%);
-  --border-width: 1px;
-  --border-radius: 4px;
-  --text-color: #354052;
-  --text-color--hover: var(--text-color);
-  --text-color--active: var(--text-color);
-  --text-color--disabled: #354052;
-  --font-size: 14px;
-  --line-height: 19px;
-  --padding: 8px 21px;
-  background-image: var(--background-image);
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
-  color: var(--text-color);
-  cursor: pointer;
-  display: inline-block;
-  font-family: SourceSansPro-Semibold;
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-  padding: var(--padding);
-  transition: all 0.2s linear;
-}
-.button.is-green {
-  --background-image: linear-gradient(-180deg, #39b54a 0%, #34aa44 98%);
-  --border-color: #249533;
-  --text-color: #fff;
-  --background-image--hover: linear-gradient(-1deg, #1e930b 3%, #1e9d09 100%);
-  --border-color: #1f872d;
-  --text-color--hover: #fff;
-  --background-image--active: linear-gradient(-1deg, #1a740b 4%, #187a08 100%);
-  --border-color--active: #14661f;
-  --text-color--active: #fff;
-}
-.button.is-blue {
-  --background-image: linear-gradient(-1deg, #1991eb 2%, #2da1f8 98%);
-  --border-color: #1585d8;
-  --text-color: #fff;
-  --background-image--hover: linear-gradient(-180deg, #1584d7 5%, #2184cf 98%);
-  --border-color--hover: 1px solid #1578c2;
-  --text-color--hover: #fff;
-  --background-image--active: linear-gradient(-180deg, #0c73c1 2%, #196baa 98%);
-  --border-color--active: 1px solid #1468a7;
-  --text-color--active: #fff;
-}
-.button.is-purple {
-  --background-image: linear-gradient(-1deg, #6b47db 2%, #8261e6 98%);
-  --border-color: #5f40c1;
-  --text-color: #fff;
-  --background-image--hover: linear-gradient(-1deg, #613cd0 2%, #7352d5 98%);
-  --border-color: #5739b8;
-  --text-color: #fff;
-  --background-image--active: linear-gradient(-1deg, #5632c4 2%, #714edc 98%);
-  --border-color--active: 1px solid #5536b6;
-  --text-color--active: #fff;
-}
-.button.is-red {
-  --background-image: linear-gradient(-180deg, #f85359 3%, #dc151d 98%);
-  --border-color: 1px solid #db161e;
-  --text-color: #fff;
-  --background-image--hover: linear-gradient(-180deg, #f14d53 3%, #d0161d 98%);
-  --border-color--hover: 1px solid #d0121a;
-  --text-color--hover: #fff;
-  --background-image--active: linear-gradient(-180deg, #ec4349 3%, #bd0c13 98%);
-  --border-color--active: 1px solid #d01119;
-  --text-color--active: #fff;
-}
-.button.is-black {
-  --background-image: linear-gradient(-180deg, #516173 3%, #3b4857 98%);
-  --border-color: 1px solid #3b4958;
-  --text-color: #fff;
-  --background-image--hover: linear-gradient(-180deg, #415061 3%, #303d4c 98%);
-  --border--color--hover: 1px solid #334050;
-  --text-color--hover: #fff;
-  --background-image--active: linear-gradient(-180deg, #354353 3%, #242f3b 98%);
-  --border-color--active: 1px solid #303c4b;
-  --text-color--active: #fff;
-}
-.button.is-orange {
-  --background-image: linear-gradient(-180deg, #f7981c 2%, #f76b1c 100%);
-  --border-color: 1px solid #f36a19;
-  --text-color: #fff;
-  --background-image--hover: linear-gradient(-180deg, #ef9219 2%, #e86013 100%);
-  --border-color--hover: 1px solid #ea6211;
-  --text-color--hover: #fff;
-  --background-image--active: linear-gradient(-180deg, #e88b12 2%, #e75908 100%);
-  --border-color--active: 1px solid #e25d0e;
-  --text-color--active: #fff;
-}
-.button:hover,
-.button.is-hovered {
-  background-image: var(--background-image--hover);
-  border-color: var(--border-color--hover);
-  color: var(--text-color--hover);
-}
-.button:active,
-.button.is-active,
-.button:focus,
-.button.is-focused {
-  background-image: var(--background-image--active);
-  border-color: var(--border-color--active);
-  color: var(--text-color--active);
-  outline: 0;
-}
-.button:disabled,
-.button.is-disabled {
-  background-image: var(--background-image--disabled);
-  border-color: var(--border-color--disabled);
-  color: var(--text-color--disabled);
-  opacity: 0.5;
-}
-.label {
-  --background-color: #dfe1e5;
-  --text-color: #354052;
-  background-color: var(--background-color);
-  border-radius: 3px;
-  font-family: SourceSansPro-Semibold;
-  font-size: 10px;
-  line-height: 13px;
-  color: var(--text-color);
-  padding: 4px 10px;
-  display: inline-block;
-}
-.label.is-black {
-  --background-color: #516173;
-  --text-color: #fff;
-}
-.label.is-blue {
-  --background-color: #36af47;
-  --text-color: #fff;
-}
-.label.is-green {
-  --background-color: #1991eb;
-  --text-color: #fff;
-}
-.label.is-grey--dark {
-  --background-color: #c2cad4;
-  --text-color: #fff;
-}
-.label.is-grey--light {
-  --background-color: #dfe1e5;
-  --text-color: #354052;
-}
-.label.is-orange {
-  --background-color: #f7981c;
-  --text-color: #fff;
-}
-.label.is-red {
-  --background-color: #ed1c24;
-  --text-color: #fff;
-}
-.notification {
-  --background-color: #dfe1e5;
-  --text-color: #354052;
-  background-color: var(--background-color);
-  border-radius: 4px;
-  font-family: SourceSansPro-Semibold;
-  font-size: 14px;
-  color: var(--text-color);
-  padding: 10px;
-}
-.notification.is-green {
-  --background-color: #1991eb;
-  --text-color: #fff;
-}
-.notification.is-blue {
-  --background-color: #36af47;
-  --text-color: #fff;
-}
-.notification.is-orange {
-  --background-color: #f7981c;
-  --text-color: #fff;
-}
-.notification.is-red {
-  --background-color: #ed1c24;
-  --text-color: #fff;
-}
-.tabs {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #2ea2f8;
-  box-shadow: inset 0px -1px 0px #dfe2e5;
-}
-.tabs ul {
-  list-style: none;
-  margin: 0;
-  pading: 0;
-  display: flex;
-}
-.tabs li {
-  font-family: SourceSansPro-Regular;
-  font-size: 16px;
-  color: var(--text-color);
-  display: inline-block;
-}
-.tabs li:before {
-  display: none;
-}
-.tabs li.is-active {
-  color: var(--text-color--active);
-}
-.tabs li.is-active a {
-  box-shadow: inset 0px -3px 0px var(--border-color--active);
-}
-.tabs li a {
-  padding: 19px 0;
-  margin: 0 15px;
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-.tabs.is-black,
-.tabs .is-black {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #516173;
-}
-.tabs.is-blue,
-.tabs .is-blue {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #36af47;
-}
-.tabs.is-green,
-.tabs .is-green {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #1991eb;
-}
-.tabs.is-grey--dark,
-.tabs .is-grey--dark {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #c2cad4;
-}
-.tabs.is-grey--light,
-.tabs .is-grey--light {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #dfe1e5;
-}
-.tabs.is-orange,
-.tabs .is-orange {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #f7981c;
-}
-.tabs.is-red,
-.tabs .is-red {
-  --text-color: #7f8fa4;
-  --text-color--active: #354052;
-  --border-color--active: #ed1c24;
-}
-.top-bar {
-  --background-color: #2ea2f8;
-  display: flex;
-  background: var(--background-color);
-  height: 70px;
-}
-.top-bar-section {
-  border-right: 1px solid rgba(255,255,255,0.15);
-}
-.top-bar-logo {
-  font-family: SourceSansPro-Semibold;
-  font-size: 16px;
-  color: #fff;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 30px;
-  padding-right: 120px;
-}
-.top-bar-nav {
-  font-family: SourceSansPro-Semibold;
-  font-size: 16px;
-  color: #fff;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 30px;
-  padding-right: 120px;
-}
-.top-bar-nav ul {
-  list-style: none;
-  display: inline-block;
-}
-.top-bar-nav li {
-  display: inline-block;
-}
-.top-bar-nav a {
-  color: #fff;
-  padding: 0 10px;
-  text-decoration: none;
-}
-.top-bar.is-dark {
-  --background-color: #273142;
-}
-.top-bar.is-violet {
-  --background-color: #886ce6;
-}
-.top-bar.is-green {
-  --background-color: #45b854;
-}
-/*# sourceMappingURL=index.css.map */
-</style><style>
-
-</style>
-<div class='top-bar'>
-  <div class='top-bar-section'>
-    <div class='top-bar-logo'>
-      Styleguide
-    </div>
-  </div>
-  <div class='top-bar-section'>
-    <div class='top-bar-nav'>
-    </div>
-  </div>
-</div>
-
-<div id="styleguide">
-
-  <div class='container'>
-    <div class='columns'>
-
-      <div class='column is-2'>
-        <ul>
-            <li>
-                <a class="submenulink" href="#" data-section="Base">
-                  Base
-                </a>
-                <ul class="submenu" data-submenu="Base">
-                    <li>
-                      <a href="#Base-Buttons">
-                        Buttons
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Base-Grid">
-                        Grid
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Base-Reset">
-                        Reset
-                      </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="submenulink" href="#" data-section="Components">
-                  Components
-                </a>
-                <ul class="submenu" data-submenu="Components">
-                    <li>
-                      <a href="#Components-Notifications">
-                        Notifications
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Components-Tabs">
-                        Tabs
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Components-Top_Bar">
-                        Top Bar
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Components-labels">
-                        labels
-                      </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="submenulink" href="#" data-section="Typography">
-                  Typography
-                </a>
-                <ul class="submenu" data-submenu="Typography">
-                    <li>
-                      <a href="#Typography-Copy">
-                        Copy
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Typography-Fonts">
-                        Fonts
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Typography-Headings">
-                        Headings
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#Typography-Lists">
-                        Lists
-                      </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  :root {
+    --columns: 12;
+    --gutter: 14px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .columns {
+    align-content: stretch;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .column {
+    display: block;
+    flex-basis: calc((100% / var(--columns)) * var(--column-width));
+    order: 0;
+    padding-left: calc(var(--gutter));
+    padding-right: calc(var(--gutter));
+  }
+  .column.is-1 {
+    --column-width: 1;
+  }
+  .column.is-2 {
+    --column-width: 2;
+  }
+  .column.is-3 {
+    --column-width: 3;
+  }
+  .column.is-4 {
+    --column-width: 4;
+  }
+  .column.is-5 {
+    --column-width: 5;
+  }
+  .column.is-6 {
+    --column-width: 6;
+  }
+  .column.is-7 {
+    --column-width: 7;
+  }
+  .column.is-8 {
+    --column-width: 8;
+  }
+  .column.is-9 {
+    --column-width: 9;
+  }
+  .column.is-10 {
+    --column-width: 10;
+  }
+  .column.is-11 {
+    --column-width: 11;
+  }
+  .column.is-12 {
+    --column-width: 12;
+  }
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
+  :root {
+    --font-family--regular: 'Source Sans Pro', sans-serif;
+    --font-family--semibold: 'Source Sans Pro', sans-serif;
+    --font-size--xx-large: 20px;
+    --font-size--x-large: 18px;
+    --font-size--large: 16px;
+    --font-size--medium: 14px;
+    --font-size--small: 12px;
+    --color-text-normal: #354052;
+  }
+  body {
+    font-family: var(--font-family--semibold);
+    font-weight: 400;
+    font-size: var(--font-size--medium);
+    line-height: 21px;
+  }
+  h1,
+  .is-text-h1 {
+    font-family: var(--font-family--regular);
+    font-size: var(--font-size--xx-large);
+    line-height: 28px;
+  }
+  h2,
+  .is-text-h2 {
+    font-family: var(--font-family--regular);
+    font-size: var(--font-size--x-large);
+    line-height: 26px;
+  }
+  h3,
+  .is-text-h3 {
+    font-family: var(--font-family--regular);
+    font-size: var(--font-size--large);
+    line-height: 24px;
+  }
+  p,
+  .is-text-p {
+    font-family: var(--font-family--regular);
+    font-size: var(--font-size--medium);
+    line-height: 21px;
+  }
+  ul,
+  .is-ul,
+  ol,
+  .is-ol {
+    margin-left: 26px;
+    font-size: 14px;
+    line-height: 30px;
+    font-family: SourceSansPro-Semibold;
+    color: #354052;
+  }
+  ul,
+  .is-ul {
+    list-style: none;
+  }
+  ul li:before,
+  .is-ul li:before {
+    background-color: rgba(53,64,82,0.5);
+    content: '';
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    margin-right: 14px;
+  }
+  ol,
+  .is-ol {
+    counter-reset: section;
+    list-style-type: none;
+  }
+  ol li:before,
+  .is-ol li:before {
+    color: #7f8fa4;
+    content: counters(section, '-') '.';
+    counter-increment: section;
+    font-family: SourceSansPro-Regular;
+    margin-right: 14px;
+  }
+  .button {
+    --border-color: #ced0da;
+    --border-color--hover: var(--border-color);
+    --border-color--active: var(--border-color);
+    --border-color--disabled: #dfe3e9;
+    --background-image: linear-gradient(0deg, #f2f4f7 0%, #fff 100%);
+    --background-image--hover: linear-gradient(0deg, #eaeef3 0%, #fff 100%);
+    --background-image--active: linear-gradient(-1deg, #e0e4e8 0%, #f2f7fa 97%);
+    --background-image--disabled: linear-gradient(0, #e9edf1 0%, #e9edf1 100%);
+    --border-width: 1px;
+    --border-radius: 4px;
+    --text-color: #354052;
+    --text-color--hover: var(--text-color);
+    --text-color--active: var(--text-color);
+    --text-color--disabled: #354052;
+    --font-size: 14px;
+    --line-height: 19px;
+    --padding: 8px 21px;
+    background-image: var(--background-image);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-block;
+    font-family: SourceSansPro-Semibold;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    padding: var(--padding);
+    transition: all 0.2s linear;
+  }
+  .button.is-green {
+    --background-image: linear-gradient(-180deg, #39b54a 0%, #34aa44 98%);
+    --border-color: #249533;
+    --text-color: #fff;
+    --background-image--hover: linear-gradient(-1deg, #1e930b 3%, #1e9d09 100%);
+    --border-color: #1f872d;
+    --text-color--hover: #fff;
+    --background-image--active: linear-gradient(-1deg, #1a740b 4%, #187a08 100%);
+    --border-color--active: #14661f;
+    --text-color--active: #fff;
+  }
+  .button.is-blue {
+    --background-image: linear-gradient(-1deg, #1991eb 2%, #2da1f8 98%);
+    --border-color: #1585d8;
+    --text-color: #fff;
+    --background-image--hover: linear-gradient(-180deg, #1584d7 5%, #2184cf 98%);
+    --border-color--hover: 1px solid #1578c2;
+    --text-color--hover: #fff;
+    --background-image--active: linear-gradient(-180deg, #0c73c1 2%, #196baa 98%);
+    --border-color--active: 1px solid #1468a7;
+    --text-color--active: #fff;
+  }
+  .button.is-purple {
+    --background-image: linear-gradient(-1deg, #6b47db 2%, #8261e6 98%);
+    --border-color: #5f40c1;
+    --text-color: #fff;
+    --background-image--hover: linear-gradient(-1deg, #613cd0 2%, #7352d5 98%);
+    --border-color: #5739b8;
+    --text-color: #fff;
+    --background-image--active: linear-gradient(-1deg, #5632c4 2%, #714edc 98%);
+    --border-color--active: 1px solid #5536b6;
+    --text-color--active: #fff;
+  }
+  .button.is-red {
+    --background-image: linear-gradient(-180deg, #f85359 3%, #dc151d 98%);
+    --border-color: 1px solid #db161e;
+    --text-color: #fff;
+    --background-image--hover: linear-gradient(-180deg, #f14d53 3%, #d0161d 98%);
+    --border-color--hover: 1px solid #d0121a;
+    --text-color--hover: #fff;
+    --background-image--active: linear-gradient(-180deg, #ec4349 3%, #bd0c13 98%);
+    --border-color--active: 1px solid #d01119;
+    --text-color--active: #fff;
+  }
+  .button.is-black {
+    --background-image: linear-gradient(-180deg, #516173 3%, #3b4857 98%);
+    --border-color: 1px solid #3b4958;
+    --text-color: #fff;
+    --background-image--hover: linear-gradient(-180deg, #415061 3%, #303d4c 98%);
+    --border--color--hover: 1px solid #334050;
+    --text-color--hover: #fff;
+    --background-image--active: linear-gradient(-180deg, #354353 3%, #242f3b 98%);
+    --border-color--active: 1px solid #303c4b;
+    --text-color--active: #fff;
+  }
+  .button.is-orange {
+    --background-image: linear-gradient(-180deg, #f7981c 2%, #f76b1c 100%);
+    --border-color: 1px solid #f36a19;
+    --text-color: #fff;
+    --background-image--hover: linear-gradient(-180deg, #ef9219 2%, #e86013 100%);
+    --border-color--hover: 1px solid #ea6211;
+    --text-color--hover: #fff;
+    --background-image--active: linear-gradient(-180deg, #e88b12 2%, #e75908 100%);
+    --border-color--active: 1px solid #e25d0e;
+    --text-color--active: #fff;
+  }
+  .button:hover,
+  .button.is-hovered {
+    background-image: var(--background-image--hover);
+    border-color: var(--border-color--hover);
+    color: var(--text-color--hover);
+  }
+  .button:active,
+  .button.is-active,
+  .button:focus,
+  .button.is-focused {
+    background-image: var(--background-image--active);
+    border-color: var(--border-color--active);
+    color: var(--text-color--active);
+    outline: 0;
+  }
+  .button:disabled,
+  .button.is-disabled {
+    background-image: var(--background-image--disabled);
+    border-color: var(--border-color--disabled);
+    color: var(--text-color--disabled);
+    opacity: 0.5;
+  }
+  .icon {
+    --icon-size: 1.5rem;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+  .icon svg {
+    width: var(--icon-size) !important;
+    height: var(--icon-size) !important;
+    display: block;
+    color: var(--background-color);
+  }
+  .icon.is-small {
+    --icon-size: 1rem;
+  }
+  .icon.is-medium {
+    --icon-size: 2rem;
+  }
+  .icon.is-large {
+    --icon-size: 3rem;
+  }
+  .icon.is-black {
+    --background-color: #516173;
+  }
+  .icon.is-blue {
+    --background-color: #36af47;
+  }
+  .icon.is-green {
+    --background-color: #1991eb;
+  }
+  .icon.is-grey--dark {
+    --background-color: #c2cad4;
+  }
+  .icon.is-grey--light {
+    --background-color: #dfe1e5;
+  }
+  .icon.is-orange {
+    --background-color: #f7981c;
+  }
+  .icon.is-red {
+    --background-color: #ed1c24;
+  }
+  .label {
+    --background-color: #dfe1e5;
+    --text-color: #354052;
+    background-color: var(--background-color);
+    border-radius: 3px;
+    font-family: SourceSansPro-Semibold;
+    font-size: 10px;
+    line-height: 13px;
+    color: var(--text-color);
+    padding: 4px 10px;
+    display: inline-block;
+  }
+  .label.is-black {
+    --background-color: #516173;
+    --text-color: #fff;
+  }
+  .label.is-blue {
+    --background-color: #36af47;
+    --text-color: #fff;
+  }
+  .label.is-green {
+    --background-color: #1991eb;
+    --text-color: #fff;
+  }
+  .label.is-grey--dark {
+    --background-color: #c2cad4;
+    --text-color: #fff;
+  }
+  .label.is-grey--light {
+    --background-color: #dfe1e5;
+    --text-color: #354052;
+  }
+  .label.is-orange {
+    --background-color: #f7981c;
+    --text-color: #fff;
+  }
+  .label.is-red {
+    --background-color: #ed1c24;
+    --text-color: #fff;
+  }
+  .notification {
+    --background-color: #dfe1e5;
+    --text-color: #354052;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    font-family: SourceSansPro-Semibold;
+    font-size: 14px;
+    color: var(--text-color);
+    padding: 10px;
+  }
+  .notification.is-green {
+    --background-color: #1991eb;
+    --text-color: #fff;
+  }
+  .notification.is-blue {
+    --background-color: #36af47;
+    --text-color: #fff;
+  }
+  .notification.is-orange {
+    --background-color: #f7981c;
+    --text-color: #fff;
+  }
+  .notification.is-red {
+    --background-color: #ed1c24;
+    --text-color: #fff;
+  }
+  .tabs {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #2ea2f8;
+    box-shadow: inset 0px -1px 0px #dfe2e5;
+  }
+  .tabs ul {
+    list-style: none;
+    margin: 0;
+    pading: 0;
+    display: flex;
+  }
+  .tabs li {
+    font-family: SourceSansPro-Regular;
+    font-size: 16px;
+    color: var(--text-color);
+    display: inline-block;
+  }
+  .tabs li:before {
+    display: none;
+  }
+  .tabs li.is-active {
+    color: var(--text-color--active);
+  }
+  .tabs li.is-active a {
+    box-shadow: inset 0px -3px 0px var(--border-color--active);
+  }
+  .tabs li a {
+    padding: 19px 0;
+    margin: 0 15px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .tabs.is-black,
+  .tabs .is-black {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #516173;
+  }
+  .tabs.is-blue,
+  .tabs .is-blue {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #36af47;
+  }
+  .tabs.is-green,
+  .tabs .is-green {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #1991eb;
+  }
+  .tabs.is-grey--dark,
+  .tabs .is-grey--dark {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #c2cad4;
+  }
+  .tabs.is-grey--light,
+  .tabs .is-grey--light {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #dfe1e5;
+  }
+  .tabs.is-orange,
+  .tabs .is-orange {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #f7981c;
+  }
+  .tabs.is-red,
+  .tabs .is-red {
+    --text-color: #7f8fa4;
+    --text-color--active: #354052;
+    --border-color--active: #ed1c24;
+  }
+  .top-bar {
+    --background-color: #2ea2f8;
+    display: flex;
+    background: var(--background-color);
+    height: 70px;
+  }
+  .top-bar-section {
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .top-bar-logo {
+    font-family: SourceSansPro-Semibold;
+    font-size: 16px;
+    color: #fff;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 30px;
+    padding-right: 120px;
+  }
+  .top-bar-nav {
+    font-family: SourceSansPro-Semibold;
+    font-size: 16px;
+    color: #fff;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 30px;
+    padding-right: 120px;
+  }
+  .top-bar-nav ul {
+    list-style: none;
+    display: inline-block;
+  }
+  .top-bar-nav li {
+    display: inline-block;
+  }
+  .top-bar-nav a {
+    color: #fff;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+  .top-bar.is-dark {
+    --background-color: #273142;
+  }
+  .top-bar.is-violet {
+    --background-color: #886ce6;
+  }
+  .top-bar.is-green {
+    --background-color: #45b854;
+  }
+  /*# sourceMappingURL=index.css.map */
+  </style>  <style>
+  
+  </style>  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class='top-bar'>
+    <div class='top-bar-section'>
+      <div class='top-bar-logo'>
+        Styleguide
       </div>
+    </div>
+    <div class='top-bar-section'>
+      <div class='top-bar-nav'>
+      </div>
+    </div>
+  </div>
 
-      <div class='column is-10'>
-          <div class="section" id="Base-Buttons" data-section="Base" data-heading="Buttons">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Base/Buttons
-              </h3>
-              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+  <div id="styleguide">
+
+    <div class='container'>
+      <div class='columns'>
+
+        <div class='column is-2'>
+          <ul>
+              <li>
+                  <a class="submenulink" href="#" data-section="Base">
+                    Base
+                  </a>
+                  <ul class="submenu" data-submenu="Base">
+                      <li>
+                        <a href="#Base-Buttons">
+                          Buttons
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Base-Grid">
+                          Grid
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Base-Reset">
+                          Reset
+                        </a>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <a class="submenulink" href="#" data-section="Components">
+                    Components
+                  </a>
+                  <ul class="submenu" data-submenu="Components">
+                      <li>
+                        <a href="#Components-Icons">
+                          Icons
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Components-Notifications">
+                          Notifications
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Components-Tabs">
+                          Tabs
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Components-Top_Bar">
+                          Top Bar
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Components-labels">
+                          labels
+                        </a>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <a class="submenulink" href="#" data-section="Typography">
+                    Typography
+                  </a>
+                  <ul class="submenu" data-submenu="Typography">
+                      <li>
+                        <a href="#Typography-Copy">
+                          Copy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Typography-Fonts">
+                          Fonts
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Typography-Headings">
+                          Headings
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Typography-Lists">
+                          Lists
+                        </a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+        </div>
+
+        <div class='column is-10'>
+            <div class="section" id="Base-Buttons" data-section="Base" data-heading="Buttons">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Base/Buttons
+                </h3>
+                <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <button class="button">Button</button>
 <button class="button is-hovered">Button</button>
 <button class="button is-focused">Button</button>
@@ -731,36 +787,84 @@ ol li:before,
 <button class="button is-orange is-focused">Button</button>
 <button class="button is-orange is-active">Button</button>
 <button class="button is-orange is-disabled">Button</button>
+              </div>
+
+
             </div>
+            <div class="section" id="Base-Grid" data-section="Base" data-heading="Grid">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Base/Grid
+                </h3>
+                <p>thanks to <a href="https://codepen.io/jacobberglund/pen/bwxxRy">CSS Grid with Variables</a> by @jacobberglund</p>
+              </div>
 
 
-          </div>
-          <div class="section" id="Base-Grid" data-section="Base" data-heading="Grid">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Base/Grid
-              </h3>
-              <p>thanks to <a href="https://codepen.io/jacobberglund/pen/bwxxRy">CSS Grid with Variables</a> by @jacobberglund</p>
             </div>
+            <div class="section" id="Base-Reset" data-section="Base" data-heading="Reset">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Base/Reset
+                </h3>
+                <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+              </div>
 
 
-          </div>
-          <div class="section" id="Base-Reset" data-section="Base" data-heading="Reset">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Base/Reset
-              </h3>
-              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
             </div>
+            <div class="section" id="Components-Icons" data-section="Components" data-heading="Icons">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Components/Icons
+                </h3>
+                <p>Compatible with the following icon font libraries:</p>
+<ul>
+<li>Font Awesome 5</li>
+</ul>
+<h2 class="main-section-sg-by-emiloberg" id="section-Sizes">Sizes</h2>
+<p><span class="icon">
+  <i class="fas fa-camera-retro"></i>
+</span></p>
+<p><span class="icon is-small">
+  <i class="fas fa-camera-retro"></i>
+</span></p>
+<p><span class="icon is-medium">
+  <i class="fas fa-camera-retro"></i>
+</span></p>
+<p><span class="icon is-large">
+  <i class="fas fa-camera-retro"></i>
+</span></p>
+<h2 class="main-section-sg-by-emiloberg" id="section-Color_variations">Color variations</h2>
+<p><span class="icon is-medium is-black">
+  <i class="fas fa-camera-retro"></i>
+</span>
+<span class="icon is-medium is-blue">
+  <i class="fas fa-camera-retro"></i>
+</span>
+<span class="icon is-medium is-green">
+  <i class="fas fa-camera-retro"></i>
+</span>
+<span class="icon is-medium is-grey--dark">
+  <i class="fas fa-camera-retro"></i>
+</span>
+<span class="icon is-medium is-grey--light">
+  <i class="fas fa-camera-retro"></i>
+</span>
+<span class="icon is-medium is-orange">
+  <i class="fas fa-camera-retro"></i>
+</span>
+<span class="icon is-medium is-red">
+  <i class="fas fa-camera-retro"></i>
+</span></p>
+              </div>
 
 
-          </div>
-          <div class="section" id="Components-Notifications" data-section="Components" data-heading="Notifications">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Components/Notifications
-              </h3>
-              <p><div class="notification">
+            </div>
+            <div class="section" id="Components-Notifications" data-section="Components" data-heading="Notifications">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Components/Notifications
+                </h3>
+                <p><div class="notification">
   No Style
 </div>
 <br></p>
@@ -780,16 +884,16 @@ ol li:before,
   Error. Can&#x2019;t connect to the platform.
 </div>
 <br></p>
+              </div>
+
+
             </div>
-
-
-          </div>
-          <div class="section" id="Components-Tabs" data-section="Components" data-heading="Tabs">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Components/Tabs
-              </h3>
-              <div class="tabs">
+            <div class="section" id="Components-Tabs" data-section="Components" data-heading="Tabs">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Components/Tabs
+                </h3>
+                <div class="tabs">
   <ul>
     <li class="is-active"><a href="#">Tab1</a></li>
     <li><a href="#">Tab 2</a></li>
@@ -858,16 +962,16 @@ ol li:before,
     <li class="is-active is-red"><a href="#">Red</a></li>
   </ul>
 </div>
+              </div>
+
+
             </div>
-
-
-          </div>
-          <div class="section" id="Components-Top_Bar" data-section="Components" data-heading="Top Bar">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Components/Top Bar
-              </h3>
-              <div class="top-bar">
+            <div class="section" id="Components-Top_Bar" data-section="Components" data-heading="Top Bar">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Components/Top Bar
+                </h3>
+                <div class="top-bar">
   <div class="top-bar-section">
     <div class="top-bar-logo">
       Workspace
@@ -902,16 +1006,16 @@ ol li:before,
     </div>
   </div>
 </div>
+              </div>
+
+
             </div>
-
-
-          </div>
-          <div class="section" id="Components-labels" data-section="Components" data-heading="labels">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Components/labels
-              </h3>
-              <div class="label">
+            <div class="section" id="Components-labels" data-section="Components" data-heading="labels">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Components/labels
+                </h3>
+                <div class="label">
   No Style
 </div>
 <div class="label is-black">
@@ -935,57 +1039,57 @@ ol li:before,
 <div class="label is-red">
   Red
 </div>
+              </div>
+
+
             </div>
-
-
-          </div>
-          <div class="section" id="Typography-Copy" data-section="Typography" data-heading="Copy">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Typography/Copy
-              </h3>
-              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+            <div class="section" id="Typography-Copy" data-section="Typography" data-heading="Copy">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Typography/Copy
+                </h3>
+                <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <p>Paragraph</p>
+              </div>
+
+
             </div>
-
-
-          </div>
-          <div class="section" id="Typography-Fonts" data-section="Typography" data-heading="Fonts">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Typography/Fonts
-              </h3>
-              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+            <div class="section" id="Typography-Fonts" data-section="Typography" data-heading="Fonts">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Typography/Fonts
+                </h3>
+                <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <p></p><h1>Heading 1</h1><p></p>
 <p></p><h2>Heading 2</h2><p></p>
 <h3>Heading 3</h3>
 
 <p>Paragraph</p>
+              </div>
+
+
             </div>
-
-
-          </div>
-          <div class="section" id="Typography-Headings" data-section="Typography" data-heading="Headings">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Typography/Headings
-              </h3>
-              <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+            <div class="section" id="Typography-Headings" data-section="Typography" data-heading="Headings">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Typography/Headings
+                </h3>
+                <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <p></p><h1>Heading 1</h1><p></p>
 <p></p><h2>Heading 2</h2><p></p>
 <h3>Heading 3</h3>
 
 <p>Paragraph</p>
+              </div>
+
+
             </div>
-
-
-          </div>
-          <div class="section" id="Typography-Lists" data-section="Typography" data-heading="Lists">
-            <div class="comment">
-              <h3 class="is-text-h1">
-                Typography/Lists
-              </h3>
-              <h2 class="main-section-sg-by-emiloberg" id="section-Unordered_lists">Unordered lists</h2>
+            <div class="section" id="Typography-Lists" data-section="Typography" data-heading="Lists">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Typography/Lists
+                </h3>
+                <h2 class="main-section-sg-by-emiloberg" id="section-Unordered_lists">Unordered lists</h2>
 <ul>
   <li>List item 1</li>
   <li>List item 2</li>
@@ -1012,13 +1116,18 @@ ol li:before,
   <li>List item 4</li>
   <li>List item 5</li>
 </ol>
+              </div>
+
+
             </div>
-
-
-          </div>
+        </div>
       </div>
+
     </div>
 
   </div>
+</body>
+</html>
 
-</div>
+
+

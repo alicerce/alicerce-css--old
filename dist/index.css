@@ -384,6 +384,50 @@ ol li:before,
   color: var(--text-color--disabled);
   opacity: 0.5;
 }
+.icon {
+  --icon-size: 1.5rem;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+.icon svg {
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  display: block;
+  color: var(--background-color);
+}
+.icon.is-small {
+  --icon-size: 1rem;
+}
+.icon.is-medium {
+  --icon-size: 2rem;
+}
+.icon.is-large {
+  --icon-size: 3rem;
+}
+.icon.is-black {
+  --background-color: #516173;
+}
+.icon.is-blue {
+  --background-color: #36af47;
+}
+.icon.is-green {
+  --background-color: #1991eb;
+}
+.icon.is-grey--dark {
+  --background-color: #c2cad4;
+}
+.icon.is-grey--light {
+  --background-color: #dfe1e5;
+}
+.icon.is-orange {
+  --background-color: #f7981c;
+}
+.icon.is-red {
+  --background-color: #ed1c24;
+}
 .label {
   --background-color: #dfe1e5;
   --text-color: #354052;
