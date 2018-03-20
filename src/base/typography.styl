@@ -1,5 +1,5 @@
 /* SG
-# Base/Typography
+# Typography
 [Eric Meyer’s “Reset CSS” 2.0](http://meyerweb.com/eric/tools/css/reset/)
 
 <h1>Heading 1</h1>
@@ -41,8 +41,8 @@ textColor($color)
     color var(--color-text-normal)
 
 :root
-  --font-family--regular 'Source Sans Pro', sans-serif;
-  --font-family--semibold 'Source Sans Pro', sans-serif;
+  --font-family--regular 'Source Sans Pro', sans-serif
+  --font-family--semibold 'Source Sans Pro', sans-serif
   --font-size--xx-large 20px
   --font-size--x-large 18px
   --font-size--large 16px
@@ -78,4 +78,66 @@ p, .is-text-p
   fontSize('medium')
   textColor('normal')
 
+/* SG
+# Typography/Lists
+
+## Unordered lists
+<ul>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3
+    <ul>
+      <li>List item 3-1</li>
+      <li>List item 3.2</li>
+    </ul>
+  </li>
+  <li>List item 4</li>
+  <li>List item 5</li>
+</ul>
+
+## Ordered lists
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3
+    <ol>
+      <li>List item 3-1</li>
+      <li>List item 3.2</li>
+    </ol>
+  </li>
+  <li>List item 4</li>
+  <li>List item 5</li>
+</ol>
+
+*/
 // Lists
+
+ul, .is-ul, ol, .is-ol
+  margin-left 26px
+  font-size 14px
+  line-height 30px
+  font-family SourceSansPro-Semibold
+  color #354052
+
+ul, .is-ul
+  list-style none
+
+  li:before
+    background-color rgba(53,64,82,0.50)
+    content ''
+    circle(6px)
+    margin-right 14px
+
+ol, .is-ol
+  counter-reset section
+  list-style-type none
+
+  li:before
+    color #7F8FA4
+    content counters(section, '-') '.'
+    counter-increment section
+    font-family SourceSansPro-Regular
+    margin-right 14px
+
+// li
+//   color #354052
