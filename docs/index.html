@@ -385,6 +385,32 @@ ol li:before,
   color: var(--text-color--disabled);
   opacity: 0.5;
 }
+.notification {
+  --background-color: #dfe1e5;
+  --text-color: #354052;
+  background-color: var(--background-color);
+  border-radius: 4px;
+  font-family: SourceSansPro-Semibold;
+  font-size: 14px;
+  color: var(--text-color);
+  padding: 10px;
+}
+.notification.is-green {
+  --background-color: #1991eb;
+  --text-color: #fff;
+}
+.notification.is-blue {
+  --background-color: #36af47;
+  --text-color: #fff;
+}
+.notification.is-orange {
+  --background-color: #f7981c;
+  --text-color: #fff;
+}
+.notification.is-red {
+  --background-color: #ed1c24;
+  --text-color: #fff;
+}
 .top-bar {
   --background-color: #2ea2f8;
   display: flex;
@@ -483,6 +509,11 @@ ol li:before,
                   Components
                 </a>
                 <ul class="submenu" data-submenu="Components">
+                    <li>
+                      <a href="#Components-Notifications">
+                        Notifications
+                      </a>
+                    </li>
                     <li>
                       <a href="#Components-Top_Bar">
                         Top Bar
@@ -589,6 +620,35 @@ ol li:before,
                 Base/Reset
               </h3>
               <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
+            </div>
+
+
+          </div>
+          <div class="section" id="Components-Notifications" data-section="Components" data-heading="Notifications">
+            <div class="comment">
+              <h3 class="is-text-h1">
+                Components/Notifications
+              </h3>
+              <p><div class="notification">
+  No Style
+</div>
+<br></p>
+<p><div class="notification is-green">
+  Success! This is positive notification.
+</div>
+<br></p>
+<p><div class="notification is-blue">
+  All servers are now running smoothly again! Thanks.
+</div>
+<br></p>
+<p><div class="notification is-orange">
+  Warning. Loading of this page taking a way too long.
+</div>
+<br></p>
+<p><div class="notification is-red">
+  Error. Can&#x2019;t connect to the platform.
+</div>
+<br></p>
             </div>
 
 

@@ -1,0 +1,50 @@
+/* SG
+# Components/Notifications
+
+<div class='notification'>
+  No Style
+</div>
+<br>
+<div class='notification is-green'>
+  Success! This is positive notification.
+</div>
+<br>
+<div class='notification is-blue'>
+  All servers are now running smoothly again! Thanks.
+</div>
+<br>
+<div class='notification is-orange'>
+  Warning. Loading of this page taking a way too long.
+</div>
+<br>
+<div class='notification is-red'>
+  Error. Can’t connect to the platform.
+</div>
+<br>
+*/
+
+.notification
+  --background-color #DFE1E5
+  --text-color #354052
+  background-color var(--background-color)
+  border-radius 4px
+  font-family SourceSansPro-Semibold
+  font-size 14px
+  color var(--text-color)
+  padding 10px
+
+  &.is-green
+    --background-color #1991EB
+    --text-color #fff
+
+  &.is-blue
+    --background-color #36AF47
+    --text-color #fff
+
+  &.is-orange
+    --background-color #F7981C
+    --text-color #fff
+
+  &.is-red
+    --background-color #ED1C24
+    --text-color #fff
