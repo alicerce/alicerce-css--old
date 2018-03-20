@@ -163,6 +163,43 @@ p,
   font-size: var(--font-size--medium);
   line-height: 21px;
 }
+ul,
+.is-ul,
+ol,
+.is-ol {
+  margin-left: 26px;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: SourceSansPro-Semibold;
+  color: #354052;
+}
+ul,
+.is-ul {
+  list-style: none;
+}
+ul li:before,
+.is-ul li:before {
+  background-color: rgba(53,64,82,0.5);
+  content: '';
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  margin-right: 14px;
+}
+ol,
+.is-ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+ol li:before,
+.is-ol li:before {
+  color: #7f8fa4;
+  content: counters(section, '-') '.';
+  counter-increment: section;
+  font-family: SourceSansPro-Regular;
+  margin-right: 14px;
+}
 .button {
   --border-color: #ced0da;
   --border-color--hover: var(--border-color);
@@ -281,43 +318,112 @@ p,
   color: var(--text-color--disabled);
   opacity: 0.5;
 }
+.top-bar {
+  --background-color: #2ea2f8;
+  display: flex;
+  background: var(--background-color);
+  height: 70px;
+}
+.top-bar-section {
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.top-bar-logo {
+  font-family: SourceSansPro-Semibold;
+  font-size: 16px;
+  color: #fff;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 30px;
+  padding-right: 120px;
+}
+.top-bar-nav {
+  font-family: SourceSansPro-Semibold;
+  font-size: 16px;
+  color: #fff;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 30px;
+  padding-right: 120px;
+}
+.top-bar-nav ul {
+  list-style: none;
+  display: inline-block;
+}
+.top-bar-nav li {
+  display: inline-block;
+}
+.top-bar-nav a {
+  color: #fff;
+  padding: 0 10px;
+  text-decoration: none;
+}
+.top-bar.is-dark {
+  --background-color: #273142;
+}
+.top-bar.is-violet {
+  --background-color: #886ce6;
+}
+.top-bar.is-green {
+  --background-color: #45b854;
+}
 /*# sourceMappingURL=index.css.map */
 </style><style>
 
 </style>
-<div id="styleguide-menu">
-  <ul>
-      <li>
-          <a class="submenulink" href="#" data-section="Base">
-            Base
-          </a>
-          <ul class="submenu" data-submenu="Base">
-              <li>
-                <a href="#Base-Buttons">
-                  Buttons
-                </a>
-              </li>
-              <li>
-                <a href="#Base-Reset">
-                  Reset
-                </a>
-              </li>
-              <li>
-                <a href="#Base-Typography">
-                  Typography
-                </a>
-              </li>
-          </ul>
-      </li>
-  </ul>
+<div class='top-bar'>
+  <div class='top-bar-section'>
+    <div class='top-bar-logo'>
+      Styleguide
+    </div>
+  </div>
+  <div class='top-bar-section'>
+    <div class='top-bar-nav'>
+      <ul>
+          <li>
+              <a class="submenulink" href="#" data-section="Base">
+                Base
+              </a>
+              <ul class="submenu" data-submenu="Base">
+                  <li>
+                    <a href="#Base-Buttons">
+                      Buttons
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#Base-Reset">
+                      Reset
+                    </a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a class="submenulink" href="#" data-section="Components">
+                Components
+              </a>
+              <ul class="submenu" data-submenu="Components">
+                  <li>
+                    <a href="#Components-Top_Bar">
+                      Top Bar
+                    </a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a class="sectionlink" href="#" data-section="Typography">
+                Typography
+              </a>
+          </li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <div id="styleguide">
     <div class="section" id="Base-Buttons" data-section="Base" data-heading="Buttons">
       <div class="comment">
-        <h1>
+        <h3 class="is-text-h1">
           Base/Buttons
-        </h1>
+        </h3>
         <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <button class="button">Button</button>
 <button class="button is-hovered">Button</button>
@@ -372,25 +478,105 @@ p,
     </div>
     <div class="section" id="Base-Reset" data-section="Base" data-heading="Reset">
       <div class="comment">
-        <h1>
+        <h3 class="is-text-h1">
           Base/Reset
-        </h1>
+        </h3>
         <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
       </div>
 
 
     </div>
-    <div class="section" id="Base-Typography" data-section="Base" data-heading="Typography">
+    <div class="section" id="Components-Top_Bar" data-section="Components" data-heading="Top Bar">
       <div class="comment">
-        <h1>
-          Base/Typography
-        </h1>
+        <h3 class="is-text-h1">
+          Components/Top Bar
+        </h3>
+        <div class="top-bar">
+  <div class="top-bar-section">
+    <div class="top-bar-logo">
+      Workspace
+    </div>
+  </div>
+</div>
+<br>
+
+<br>
+<div class="top-bar is-dark">
+  <div class="top-bar-section">
+    <div class="top-bar-logo">
+      Workspace
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="top-bar is-violet">
+  <div class="top-bar-section">
+    <div class="top-bar-logo">
+      Workspace
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="top-bar is-green">
+  <div class="top-bar-section">
+    <div class="top-bar-logo">
+      Workspace
+    </div>
+  </div>
+</div>
+      </div>
+
+
+    </div>
+    <div class="section" id="Typography-" data-section="Typography" data-heading="">
+      <div class="comment">
+        <h3 class="is-text-h1">
+          Typography
+        </h3>
         <p><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&#x2019;s &#x201C;Reset CSS&#x201D; 2.0</a></p>
 <p></p><h1>Heading 1</h1><p></p>
 <p></p><h2>Heading 2</h2><p></p>
 <h3>Heading 3</h3>
 
 <p>Paragraph</p>
+      </div>
+
+
+    </div>
+    <div class="section" id="Typography-Lists" data-section="Typography" data-heading="Lists">
+      <div class="comment">
+        <h3 class="is-text-h1">
+          Typography/Lists
+        </h3>
+        <h2 class="main-section-sg-by-emiloberg" id="section-Unordered_lists">Unordered lists</h2>
+<ul>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3
+    <ul>
+      <li>List item 3-1</li>
+      <li>List item 3.2</li>
+    </ul>
+  </li>
+  <li>List item 4</li>
+  <li>List item 5</li>
+</ul>
+
+<h2 class="main-section-sg-by-emiloberg" id="section-Ordered_lists">Ordered lists</h2>
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3
+    <ol>
+      <li>List item 3-1</li>
+      <li>List item 3.2</li>
+    </ol>
+  </li>
+  <li>List item 4</li>
+  <li>List item 5</li>
+</ol>
       </div>
 
 
