@@ -441,6 +441,55 @@ ol li:before,
   color: var(--text-color--disabled);
   opacity: 0.5;
 }
+.badge {
+  --background-color: #dfe1e5;
+  --text-color: #354052;
+  --font-size: 12px;
+  --line-height: 15px;
+  --border-radius: var(--font-size, 10px);
+  display: inline-block;
+  border-radius: var(--border-radius);
+  font-family: SourceSansPro-Semibold;
+  background: var(--background-color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  padding: 2px 6px;
+}
+.icon .badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.badge.is-black {
+  --background-color: #516173;
+  --text-color: #fff;
+}
+.badge.is-blue {
+  --background-color: #36af47;
+  --text-color: #fff;
+}
+.badge.is-green {
+  --background-color: #1991eb;
+  --text-color: #fff;
+}
+.badge.is-grey--dark {
+  --background-color: #c2cad4;
+  --text-color: #fff;
+}
+.badge.is-grey--light {
+  --background-color: #dfe1e5;
+  --text-color: #354052;
+}
+.badge.is-orange {
+  --background-color: #f7981c;
+  --text-color: #fff;
+}
+.badge.is-red {
+  --background-color: #ed1c24;
+  --text-color: #fff;
+}
 .icon {
   --icon-size: 1em;
   align-items: center;
@@ -448,6 +497,7 @@ ol li:before,
   justify-content: center;
   width: var(--icon-size);
   height: var(--icon-size);
+  position: relative;
 }
 .icon svg {
   width: var(--icon-size) !important;

@@ -1,0 +1,110 @@
+/* SG
+# Elements/Badges
+
+<br>
+
+## Default
+
+<span class="badge">3</span>
+
+<br>
+<br>
+
+## Color variations
+
+<br>
+
+<span class="badge is-black">3</span>
+<span class="badge is-blue">3</span>
+<span class="badge is-green">3</span>
+<span class="badge is-grey--dark">3</span>
+<span class="badge is-grey--light">3</span>
+<span class="badge is-orange">3</span>
+<span class="badge is-red">3</span>
+<br>
+<br>
+<span class="badge is-black">999</span>
+<span class="badge is-blue">999</span>
+<span class="badge is-green">999</span>
+<span class="badge is-grey--dark">999</span>
+<span class="badge is-grey--light">999</span>
+<span class="badge is-orange">999</span>
+<span class="badge is-red">999</span>
+
+<br>
+<br>
+
+## Icon + Badge
+
+<br>
+
+<span class="icon is-black">
+  <i class="fas fa-camera-retro"></i>
+  <span class="badge is-blue">3</span>
+</span>
+
+<br>
+
+<span class="icon is-medium is-black">
+  <i class="fas fa-camera-retro"></i>
+  <span class="badge is-blue">3</span>
+</span>
+
+<br>
+<br>
+
+*/
+
+.badge
+  --background-color #DFE1E5
+  --text-color #354052
+  --font-size 12px
+  --line-height 15px
+  --border-radius var(--font-size,  10px)
+
+  display inline-block
+  border-radius var(--border-radius)
+  font-family SourceSansPro-Semibold
+  background var(--background-color)
+  font-size var(--font-size)
+  line-height var(--line-height)
+  color var(--text-color)
+  padding 2px 6px
+
+  .icon &
+    position absolute
+    top 0
+    right 0
+    transform translate(50%, -50%)
+
+  &.is-black
+    --background-color #516173
+    --text-color #fff
+
+  &.is-blue
+    --background-color #36AF47
+    --text-color #fff
+
+  &.is-green
+    --background-color #1991EB
+    --text-color #fff
+
+  &.is-grey--dark
+    --background-color #C2CAD4
+    --text-color #fff
+
+  &.is-grey--light
+    --background-color #DFE1E5
+    --text-color #354052
+
+  &.is-orange
+    --background-color #F7981C
+    --text-color #fff
+
+  &.is-red
+    --background-color #ED1C24
+    --text-color #fff
+
+
+
+
