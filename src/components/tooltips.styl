@@ -1,0 +1,279 @@
+/* SG
+# Components/Tooltips
+
+<br/>
+
+## Color variations
+
+<br />
+<br />
+<br />
+<div class="columns">
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip">
+        Default
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-black">
+        Black
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-blue">
+        Blue
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-green">
+        Green
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-grey--dark">
+        Grey Dark
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-grey--light">
+        Grey Light
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-orange">
+        Orange
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-red">
+        Red
+      </div>
+    </button>
+  </div>
+</div>
+
+<br />
+
+## Position variations
+
+<br />
+<br />
+<br />
+<div class="columns">
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip">
+        Default
+      </div>
+    </button>
+  </div>
+  <div class="column is-1">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-top">
+        Top
+      </div>
+    </button>
+  </div>
+  <div class="column is-2">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-right">
+        Right
+      </div>
+    </button>
+  </div>
+  <div class="column is-2">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-bottom">
+        Bottom
+      </div>
+    </button>
+  </div>
+  <div class="column is-2">
+    <button class='button is-rounded is-grey has-tooltip'>
+      <span class="icon">
+        <i class="fas fa-info"></i>
+      </span>
+      <div class="tooltip is-left">
+        Left
+      </div>
+    </button>
+  </div>
+</div>
+
+<br />
+<br />
+
+*/
+
+.has-tooltip
+  position relative
+
+.tooltip
+  --border-color #CED0DA
+  --border-width 1px
+  --arrow-background-color  var(--background-color) transparent transparent transparent
+  --arrow-border-color  var(--border-color) transparent transparent transparent
+  --arrow-left 50%
+  --arrow-size 5px
+  --arrow-top 100%
+  --arrow-magin-adjust calc(var(--border-width) * -1) 0 0 0
+  --arrow-transform translate(-50%, 0)
+  --background-color #F2F4F7
+  --font-size 14px
+  --text-color #354052
+  --tooltip-distance 10px
+  --tooltip-left 50%
+  --tooltip-top 0
+  --tooltip-transform translate(-50%, calc(-100% - var(--tooltip-distance)))
+  background-color var(--background-color)
+  border var(--border-width) solid var(--border-color)
+  border-radius 2px
+  position absolute
+  font-size var(--font-size)
+  top var(--tooltip-top)
+  left var(--tooltip-left)
+  transform var(--tooltip-transform)
+  padding 10px 20px
+  color var(--text-color)
+
+  &:before
+    content ''
+    border var(--arrow-size) solid transparent
+    border-color var(--arrow-border-color)
+    position absolute
+    top var(--arrow-top)
+    left var(--arrow-left)
+    transform var(--arrow-transform)
+    z-index 1
+
+  &:after
+    border var(--arrow-size) solid transparent
+    border-color var(--arrow-background-color)
+    content ''
+    left var(--arrow-left)
+    margin var(--arrow-magin-adjust)
+    position absolute
+    top var(--arrow-top)
+    transform var(--arrow-transform)
+    z-index 2
+
+
+  // Position variations
+  &.is-top
+    --tooltip-top 0
+    --tooltip-left 50%
+    --tooltip-transform translate(-50%, calc(-100% - var(--tooltip-distance)))
+
+  &.is-right
+    --tooltip-top 50%
+    --tooltip-left 100%
+    --tooltip-transform translate(var(--tooltip-distance), -50%)
+    --arrow-transform translate(-100%, -50%) rotate(90deg)
+    --arrow-top 50%
+    --arrow-left 0
+    --arrow-magin-adjust 0 0 0 var(--border-width)
+
+  &.is-bottom
+    --tooltip-left 50%
+    --tooltip-top 100%
+    --tooltip-transform translate(-50%, var(--tooltip-distance))
+    --arrow-transform translate(-50%, -100%) rotate(180deg)
+    --arrow-top 0
+    --arrow-left 50%
+    --arrow-magin-adjust var(--border-width) 0 0 0
+
+  &.is-left
+    --tooltip-top 50%
+    --tooltip-left 0
+    --tooltip-transform translate(calc(-100% - var(--tooltip-distance)), -50%)
+    --arrow-transform translate(0, -50%) rotate(270deg)
+    --arrow-top 50%
+    --arrow-left 100%
+    --arrow-magin-adjust 0 0 0 calc(var(--border-width) * -1)
+
+  // Color Variations
+  &.is-black
+    --background-color #516173
+    --border-color #516173
+    --text-color #fff
+
+  &.is-blue
+    --background-color #36AF47
+    --border-color #36AF47
+    --text-color #fff
+
+  &.is-green
+    --background-color #1991EB
+    --border-color #1991EB
+    --text-color #fff
+
+  &.is-grey--dark
+    --background-color #C2CAD4
+    --border-color #C2CAD4
+    --text-color #fff
+
+  &.is-grey--light
+    --background-color #DFE1E5
+    --border-color #DFE1E5
+    --text-color #354052
+
+  &.is-orange
+    --background-color #F7981C
+    --border-color #F7981C
+    --text-color #fff
+
+  &.is-red
+    --background-color #ED1C24
+    --border-color #ED1C24
+    --text-color #fff
