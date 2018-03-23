@@ -495,6 +495,61 @@
     --background-color: #ed1c24;
     --text-color: #fff;
   }
+  .progress-bar {
+    --height: 4px;
+    --bar-color: #e2e7ee;
+    --bar-value: #c2cad4;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    height: var(--height);
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+  }
+  .progress-bar::-webkit-progress-bar {
+    background-color: var(--bar-color);
+  }
+  .progress-bar::-webkit-progress-value {
+    background-color: var(--bar-value);
+  }
+  .progress-bar::-moz-progress-bar {
+    background-color: var(--bar-value);
+  }
+  .progress-bar::-ms-fill {
+    background-color: var(--bar-value);
+    border: none;
+  }
+  .progress-bar.is-black {
+    --background-color: #516173;
+    --border-color: #516173;
+  }
+  .progress-bar.is-blue {
+    --background-color: #36af47;
+    --bar-value: #36af47;
+  }
+  .progress-bar.is-green {
+    --background-color: #1991eb;
+    --bar-value: #1991eb;
+  }
+  .progress-bar.is-grey--dark {
+    --background-color: #c2cad4;
+    --bar-value: #c2cad4;
+  }
+  .progress-bar.is-grey--light {
+    --background-color: #dfe1e5;
+    --bar-value: #dfe1e5;
+  }
+  .progress-bar.is-orange {
+    --background-color: #f7981c;
+    --bar-value: #f7981c;
+  }
+  .progress-bar.is-red {
+    --background-color: #ed1c24;
+    --bar-value: #ed1c24;
+  }
   .icon {
     --icon-size: 1em;
     align-items: center;
@@ -944,6 +999,11 @@
                       <li>
                         <a href="#Elements-Badges">
                           Badges
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Elements-Progress_Bars">
+                          Progress Bars
                         </a>
                       </li>
                   </ul>
@@ -1595,6 +1655,39 @@
 </span></p>
 <p><br>
 <br></p>
+              </div>
+
+
+            </div>
+            <div class="section" id="Elements-Progress_Bars" data-section="Elements" data-heading="Progress Bars">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Elements/Progress Bars
+                </h3>
+                <p><br></p>
+<h2 class="main-section-sg-by-emiloberg" id="section-Default">Default</h2>
+<p><br></p>
+<progress class="progress-bar" value="15" max="100">15%</progress>
+
+<p><br>
+<br></p>
+<h2 class="main-section-sg-by-emiloberg" id="section-Color_variations">Color variations</h2>
+<p><br></p>
+<p><progress class="progress-bar is-black" value="15" max="100">15%</progress>
+<br></p>
+<p><progress class="progress-bar is-blue" value="25" max="100">15%</progress>
+<br></p>
+<p><progress class="progress-bar is-green" value="35" max="100">15%</progress>
+<br></p>
+<p><progress class="progress-bar is-grey--dark" value="45" max="100">15%</progress>
+<br></p>
+<p><progress class="progress-bar is-grey--light" value="55" max="100">15%</progress>
+<br></p>
+<p><progress class="progress-bar is-orange" value="45" max="100">15%</progress>
+<br></p>
+<p><progress class="progress-bar is-red" value="35" max="100">15%</progress>
+<br></p>
+<p><br></p>
               </div>
 
 

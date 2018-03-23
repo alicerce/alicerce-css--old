@@ -490,6 +490,61 @@ ol li:before,
   --background-color: #ed1c24;
   --text-color: #fff;
 }
+.progress-bar {
+  --height: 4px;
+  --bar-color: #e2e7ee;
+  --bar-value: #c2cad4;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 10px;
+  display: block;
+  height: var(--height);
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+.progress-bar::-webkit-progress-bar {
+  background-color: var(--bar-color);
+}
+.progress-bar::-webkit-progress-value {
+  background-color: var(--bar-value);
+}
+.progress-bar::-moz-progress-bar {
+  background-color: var(--bar-value);
+}
+.progress-bar::-ms-fill {
+  background-color: var(--bar-value);
+  border: none;
+}
+.progress-bar.is-black {
+  --background-color: #516173;
+  --border-color: #516173;
+}
+.progress-bar.is-blue {
+  --background-color: #36af47;
+  --bar-value: #36af47;
+}
+.progress-bar.is-green {
+  --background-color: #1991eb;
+  --bar-value: #1991eb;
+}
+.progress-bar.is-grey--dark {
+  --background-color: #c2cad4;
+  --bar-value: #c2cad4;
+}
+.progress-bar.is-grey--light {
+  --background-color: #dfe1e5;
+  --bar-value: #dfe1e5;
+}
+.progress-bar.is-orange {
+  --background-color: #f7981c;
+  --bar-value: #f7981c;
+}
+.progress-bar.is-red {
+  --background-color: #ed1c24;
+  --bar-value: #ed1c24;
+}
 .icon {
   --icon-size: 1em;
   align-items: center;

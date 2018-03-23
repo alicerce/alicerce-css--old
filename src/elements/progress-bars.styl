@@ -1,0 +1,93 @@
+/* SG
+# Elements/Progress Bars
+
+<br>
+
+## Default
+
+<br>
+<progress class="progress-bar" value="15" max="100">15%</progress>
+
+<br>
+<br>
+
+## Color variations
+
+<br>
+
+<progress class="progress-bar is-black" value="15" max="100">15%</progress>
+<br>
+<progress class="progress-bar is-blue" value="25" max="100">15%</progress>
+<br>
+<progress class="progress-bar is-green" value="35" max="100">15%</progress>
+<br>
+<progress class="progress-bar is-grey--dark" value="45" max="100">15%</progress>
+<br>
+<progress class="progress-bar is-grey--light" value="55" max="100">15%</progress>
+<br>
+<progress class="progress-bar is-orange" value="45" max="100">15%</progress>
+<br>
+<progress class="progress-bar is-red" value="35" max="100">15%</progress>
+<br>
+
+<br>
+
+*/
+
+.progress-bar
+  --height 4px
+  --bar-color #E2E7EE
+  --bar-value #C2CAD4
+
+  -moz-appearance none
+  -webkit-appearance none
+  border none
+  border-radius 10px
+  display block
+  height var(--height)
+  overflow hidden
+  padding 0
+  width 100%
+
+
+  &::-webkit-progress-bar
+    background-color var(--bar-color)
+
+  &::-webkit-progress-value
+    background-color var(--bar-value)
+
+  &::-moz-progress-bar
+    background-color var(--bar-value)
+
+  &::-ms-fill
+    background-color var(--bar-value)
+    border none
+
+  // Color Variations
+  &.is-black
+    --background-color #516173
+    --border-color #516173
+
+  &.is-blue
+    --background-color #36AF47
+    --bar-value #36AF47
+
+  &.is-green
+    --background-color #1991EB
+    --bar-value #1991EB
+
+  &.is-grey--dark
+    --background-color #C2CAD4
+    --bar-value #C2CAD4
+
+  &.is-grey--light
+    --background-color #DFE1E5
+    --bar-value #DFE1E5
+
+  &.is-orange
+    --background-color #F7981C
+    --bar-value #F7981C
+
+  &.is-red
+    --background-color #ED1C24
+    --bar-value #ED1C24
