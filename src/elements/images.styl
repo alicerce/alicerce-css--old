@@ -1,0 +1,85 @@
+/* SG
+# Elements/Images
+
+<br>
+<br>
+
+<figure class="image is-128x128">
+  <img src="https://bulma.io/images/placeholders/128x128.png">
+</figure>
+
+<br>
+<br>
+<img class="image" src="https://bulma.io/images/placeholders/128x128.png">
+
+<br>
+<br>
+<img class="image is-circle" src="https://bulma.io/images/placeholders/128x128.png">
+
+<br>
+<br>
+<img class="image is-16x16" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-24x24" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-32x32" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-48x48" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-64x64" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-96x96" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-128x128" src="https://bulma.io/images/placeholders/128x128.png">
+<br>
+<br>
+<img class="image is-circle is-16x16" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-24x24" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-32x32" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-48x48" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-64x64" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-96x96" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-128x128" src="https://bulma.io/images/placeholders/128x128.png">
+<br>
+<br>
+<img class="image is-rounded is-16x16" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-24x24" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-32x32" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-48x48" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-64x64" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-96x96" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-128x128" src="https://bulma.io/images/placeholders/128x128.png">
+<br>
+<br>
+
+*/
+
+.image
+  // --border-radius 0
+  border-radius var(--border-radius)
+  display block
+  height var(--size, auto)
+  position relative
+  width var(--size, auto)
+
+  img
+    border-radius var(--border-radius)
+    display block
+    height var(--size, auto)
+    max-width 100%
+    width var(--size, auto)
+
+  &.is-circle
+    --border-radius 50%
+
+  &.is-rounded
+    --border-radius 10%
+
+  &.is-16x16
+    --size 16px
+  &.is-24x24
+    --size 24px
+  &.is-32x32
+    --size 32px
+  &.is-48x48
+    --size 48px
+  &.is-64x64
+    --size 64px
+  &.is-96x96
+    --size 96px
+  &.is-128x128
+    --size 128px
