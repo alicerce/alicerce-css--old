@@ -7,8 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "stylus src/index.styl --out dist/index.css --sourcemap",
-    "build--watch": "stylus --watch src/index.styl --out dist/index.css --sourcemap ",
+    "build": "stylus src/index.styl --out dist/index.css --sourcemap -m -u rupture",
+    "build--watch": "stylus --watch src/index.styl --out dist/index.css --sourcemap -m -u rupture",
     "commitmsg": "validate-commit-msg",
     "lint": "stylint src",
     "lint-watch": "yarn lint --watch",
@@ -17,8 +17,7 @@
     "styleguide-watch": "onchange 'src/**/*.styl' -- yarn styleguide",
     "styleguide-server": "reload --browser  --dir ./docs"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
@@ -27,6 +26,7 @@
     "npm-run-all": "^4.1.2",
     "onchange": "^3.3.0",
     "reload": "^2.2.2",
+    "rupture": "^0.7.1",
     "stylelint": "^9.1.1",
     "stylus": "^0.54.5",
     "validate-commit-msg": "^2.14.0"
