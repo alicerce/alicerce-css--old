@@ -1,0 +1,291 @@
+/* SG
+# Components/Tables
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Invoice Subject</th>
+      <th>Client</th>
+      <th>VAT No.</th>
+      <th>Created</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>00450</td>
+      <th>Design Works</th>
+      <td>Carlson Limited</td>
+      <td>87956621</td>
+      <td>15 Dec 2016</td>
+      <td>
+        <span class="label is-green">
+          Due in 1 week
+        </span>
+      </td>
+      <td>$973</td>
+      <td>
+        <a href="#" class='button is-blue'>Manage</a>
+        <a href="#" class='button is-white'>Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00451</td>
+      <th>UX Wireframes</th>
+      <td>Adobe</td>
+      <td>56789765</td>
+      <td>19 Dec 2016</td>
+      <td>
+        <span class="label is-blue">
+          Pending invoice
+        </span>
+      </td>
+      <td>$456</td>
+      <td>
+        <a href="#" class='button is-blue'>Manage</a>
+        <a href="#" class='button is-white'>Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        <a href="#" class='button is-blue'>Manage</a>
+        <a href="#" class='button is-white'>Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<br />
+<br />
+
+<table class="table is-large">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Invoice Subject</th>
+      <th>Client</th>
+      <th>VAT No.</th>
+      <th>Created</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>00450</td>
+      <th>
+        Design Works
+        <span>
+          Google
+        </span>
+      </th>
+      <td>
+        <span class="td-main">
+          Carlson Limited
+        </span>
+        <span class="td-sub">
+          Google
+        </span>
+      </td>
+      <td>87956621</td>
+      <td>15 Dec 2016</td>
+      <td>
+        <span class="label is-green">
+          Due in 1 week
+        </span>
+      </td>
+      <td>$973</td>
+      <td>
+        <a href="#" class='button is-blue'>Manage</a>
+        <a href="#" class='button is-white'>Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00451</td>
+      <th>UX Wireframes</th>
+      <td>Adobe</td>
+      <td>56789765</td>
+      <td>19 Dec 2016</td>
+      <td>
+        <span class="label is-blue">
+          Pending invoice
+        </span>
+      </td>
+      <td>$456</td>
+      <td>
+        <a href="#" class='button is-blue'>Manage</a>
+        <a href="#" class='button is-white'>Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        <a href="#" class='button is-blue'>Manage</a>
+        <a href="#" class='button is-white'>Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+*/
+
+.table
+  border-spacing 0
+  background #FFFFFF
+  border 1px solid #DFE2E5
+  border-radius 4px
+  border-collapse initial
+  text-align left
+  --line-height 50px
+  --font-size 14px
+
+  tr
+    border-bottom 1px solid #DFE2E5
+    font-size var(--font-size)
+    line-height calc(50px - (var(--font-size) * 2) )
+    box-shadow 0px 1px 0px #DFE2E5
+    color #354052
+    height var(--line-height)
+
+    &:last-child
+      box-shadow 0
+
+  th
+    font-size 14px
+    font-family var(--font-family--semibold)
+    font-weight 400
+
+  th, td
+    padding 7px  15px
+    vertical-align middle
+    font-size 14px
+
+    &:first-child
+      padding-left 30px
+    &:last-child
+      padding-right 30px
+
+  thead
+    th
+      color #7F8FA4
+
+  tbody
+    th
+      color #354052
+      font-family var(--font-family--regular)
+
+    td
+      font-family var(--font-family--regular)
+      color #7F8FA4
+
+  .td
+    &-main
+      display block
+      font-size 14px
+      line-height 18px
+      color #354052
+
+    &-sub
+      display block
+      font-size 12px
+      line-height 15px
+      color #7F8FA4
+
+  // tfoot
+
+  &.is-large
+    --line-height 70px
+
+
+
+
