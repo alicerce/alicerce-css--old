@@ -10,7 +10,8 @@
 
 */
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600')
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600')
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700')
 
 fontFamily($font)
   if $font is 'regular'
@@ -45,8 +46,10 @@ textColor($color)
     color var(--color-text-normal)
 
 :root
-  --font-family--regular 'Source Sans Pro', sans-serif
-  --font-family--semibold 'Source Sans Pro', sans-serif
+  // --font-family--regular 'Source Sans Pro', sans-serif
+  // --font-family--semibold 'Source Sans Pro', sans-serif
+  --font-family--regular 'Noto Sans', sans-serif
+  --font-family--semibold 'Noto Sans', sans-serif
 
   --font-size--xxx-large 48px
   --font-size--xx-large 32px
@@ -78,25 +81,25 @@ body
 <p>Paragraph</p>
 
 */
-h1, h2, h3, h4, h5, h6
+[class*="is-text-h"]
   font-size var(--font-size)
 
-h1, .is-text-h1
+.is-text-h1
   fontFamily('regular')
   fontSize('xxx-large')
   textColor('normal')
 
-h2, .is-text-h2
+.is-text-h2
   fontFamily('regular')
   fontSize('xx-large')
   textColor('normal')
 
-h3, .is-text-h3
+.is-text-h3
   fontFamily('regular')
   fontSize('large')
   textColor('normal')
 
-h4, .is-text-h4
+.is-text-h4
   fontFamily('regular')
   fontSize('medium')
   textColor('normal')
@@ -109,7 +112,7 @@ h4, .is-text-h4
 
 */
 
-p, .is-text-p
+.is-text-p
   fontFamily('regular')
   // fontSize('medium')
   textColor('normal')
@@ -171,14 +174,14 @@ p, .is-text-p
 */
 // Lists
 
-ul, .is-ul, ol, .is-ol
+.is-ul, .is-ol
   margin-left 26px
   font-size 14px
   line-height 30px
   font-family SourceSansPro-Semibold
   color #354052
 
-ul, .is-ul
+.is-ul
   list-style none
 
   li:before
@@ -187,7 +190,7 @@ ul, .is-ul
     circle(6px)
     margin-right 14px
 
-ol, .is-ol
+.is-ol
   counter-reset section
   list-style-type none
 
@@ -200,3 +203,6 @@ ol, .is-ol
 
 // li
 //   color #354052
+
+.is-bold
+  font-weight 600
