@@ -199,10 +199,10 @@
   .column.is-12 {
     --column-width: 12;
   }
-  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700");
   :root {
-    --font-family--regular: 'Source Sans Pro', sans-serif;
-    --font-family--semibold: 'Source Sans Pro', sans-serif;
+    --font-family--regular: 'Noto Sans', sans-serif;
+    --font-family--semibold: 'Noto Sans', sans-serif;
     --font-size--xxx-large: 48px;
     --font-size--xx-large: 32px;
     --font-size--x-large: 24px;
@@ -221,71 +221,52 @@
     --font-size: var(--font-size--medium);
     font-size: var(--font-size);
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  [class*="is-text-h"] {
     font-size: var(--font-size);
   }
-  h1,
   .is-text-h1 {
     font-family: var(--font-family--regular);
     --font-size: var(--font-size--xxx-large);
   }
-  h2,
   .is-text-h2 {
     font-family: var(--font-family--regular);
     --font-size: var(--font-size--xx-large);
   }
-  h3,
   .is-text-h3 {
     font-family: var(--font-family--regular);
     --font-size: var(--font-size--large);
   }
-  h4,
   .is-text-h4 {
     font-family: var(--font-family--regular);
     --font-size: var(--font-size--medium);
   }
-  p,
   .is-text-p {
     font-family: var(--font-family--regular);
     font-size: var(--font-size);
     line-height: calc(var(--font-size) * var(--line-height-ratio));
   }
-  p.is-size--xx-small,
   .is-text-p.is-size--xx-small {
     --font-size: var(--font-size--xx-small);
   }
-  p.is-size--x-small,
   .is-text-p.is-size--x-small {
     --font-size: var(--font-size--x-small);
   }
-  p.is-size--small,
   .is-text-p.is-size--small {
     --font-size: var(--font-size--small);
   }
-  p.is-size--medium,
   .is-text-p.is-size--medium {
     --font-size: var(--font-size--medium);
   }
-  p.is-size--large,
   .is-text-p.is-size--large {
     --font-size: var(--font-size--large);
   }
-  p.is-size--x-large,
   .is-text-p.is-size--x-large {
     --font-size: var(--font-size--x-large);
   }
-  p.is-size--xx-large,
   .is-text-p.is-size--xx-large {
     --font-size: var(--font-size--xx-large);
   }
-  ul,
   .is-ul,
-  ol,
   .is-ol {
     margin-left: 26px;
     font-size: 14px;
@@ -293,11 +274,9 @@
     font-family: SourceSansPro-Semibold;
     color: #354052;
   }
-  ul,
   .is-ul {
     list-style: none;
   }
-  ul li:before,
   .is-ul li:before {
     background-color: rgba(53,64,82,0.5);
     content: '';
@@ -307,18 +286,19 @@
     border-radius: 50%;
     margin-right: 14px;
   }
-  ol,
   .is-ol {
     counter-reset: section;
     list-style-type: none;
   }
-  ol li:before,
   .is-ol li:before {
     color: #7f8fa4;
     content: counters(section, '-') '.';
     counter-increment: section;
     font-family: SourceSansPro-Regular;
     margin-right: 14px;
+  }
+  .is-bold {
+    font-weight: 600;
   }
   .button {
     --border-color: #ced0da;
@@ -338,6 +318,7 @@
     --font-size: 14px;
     --line-height: 19px;
     --padding: 8px 21px;
+    text-decoration: none;
     background-image: var(--background-image);
     border: var(--border-width) solid var(--border-color);
     border-radius: var(--border-radius);
@@ -495,6 +476,47 @@
     --background-color: #ed1c24;
     --text-color: #fff;
   }
+  .image {
+    border-radius: var(--border-radius);
+    display: block;
+    height: var(--size, auto);
+    position: relative;
+    width: var(--size, auto);
+  }
+  .image img {
+    border-radius: var(--border-radius);
+    display: block;
+    height: var(--size, auto);
+    max-width: 100%;
+    width: var(--size, auto);
+  }
+  .image.is-circle {
+    --border-radius: 50%;
+  }
+  .image.is-rounded {
+    --border-radius: 10%;
+  }
+  .image.is-16x16 {
+    --size: 16px;
+  }
+  .image.is-24x24 {
+    --size: 24px;
+  }
+  .image.is-32x32 {
+    --size: 32px;
+  }
+  .image.is-48x48 {
+    --size: 48px;
+  }
+  .image.is-64x64 {
+    --size: 64px;
+  }
+  .image.is-96x96 {
+    --size: 96px;
+  }
+  .image.is-128x128 {
+    --size: 128px;
+  }
   .progress-bar {
     --height: 4px;
     --bar-color: #e2e7ee;
@@ -608,6 +630,7 @@
     color: var(--text-color);
     padding: 4px 10px;
     display: inline-block;
+    white-space: nowrap;
   }
   .label.is-black {
     --background-color: #516173;
@@ -662,6 +685,72 @@
   .notification.is-red {
     --background-color: #ed1c24;
     --text-color: #fff;
+  }
+  .table {
+    border-spacing: 0;
+    background: #fff;
+    border: 1px solid #dfe2e5;
+    border-radius: 4px;
+    border-collapse: initial;
+    text-align: left;
+    --line-height: 50px;
+    --font-size: 14px;
+  }
+  .table tr {
+    border-bottom: 1px solid #dfe2e5;
+    font-size: var(--font-size);
+    line-height: calc(50px - (var(--font-size) * 2));
+    box-shadow: 0px 1px 0px #dfe2e5;
+    color: #354052;
+    height: var(--line-height);
+  }
+  .table tr:last-child {
+    box-shadow: 0;
+  }
+  .table th {
+    font-size: 14px;
+    font-family: var(--font-family--semibold);
+    font-weight: 400;
+  }
+  .table th,
+  .table td {
+    padding: 7px 15px;
+    vertical-align: middle;
+    font-size: 14px;
+  }
+  .table th:first-child,
+  .table td:first-child {
+    padding-left: 30px;
+  }
+  .table th:last-child,
+  .table td:last-child {
+    padding-right: 30px;
+  }
+  .table thead th {
+    color: #7f8fa4;
+  }
+  .table tbody th {
+    color: #354052;
+    font-family: var(--font-family--regular);
+  }
+  .table tbody td {
+    font-family: var(--font-family--regular);
+    color: #7f8fa4;
+  }
+  .table .td-main {
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    color: #354052;
+  }
+  .table .td-sub {
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    color: #7f8fa4;
+  }
+  .table.is-large {
+    --line-height: 70px;
   }
   .tabs {
     --text-color: #7f8fa4;
@@ -970,6 +1059,11 @@
                         </a>
                       </li>
                       <li>
+                        <a href="#Components-Tables">
+                          Tables
+                        </a>
+                      </li>
+                      <li>
                         <a href="#Components-Tabs">
                           Tabs
                         </a>
@@ -999,6 +1093,11 @@
                       <li>
                         <a href="#Elements-Badges">
                           Badges
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#Elements-Images">
+                          Images
                         </a>
                       </li>
                       <li>
@@ -1297,6 +1396,230 @@
   Error. Can&#x2019;t connect to the platform.
 </div>
 <br></p>
+              </div>
+
+
+            </div>
+            <div class="section" id="Components-Tables" data-section="Components" data-heading="Tables">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Components/Tables
+                </h3>
+                <table class="table">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Invoice Subject</th>
+      <th>Client</th>
+      <th>VAT No.</th>
+      <th>Created</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>00450</td>
+      <th>Design Works</th>
+      <td>Carlson Limited</td>
+      <td>87956621</td>
+      <td>15 Dec 2016</td>
+      <td>
+        <span class="label is-green">
+          Due in 1 week
+        </span>
+      </td>
+      <td>$973</td>
+      <td>
+        <a href="#" class="button is-blue">Manage</a>
+        <a href="#" class="button is-white">Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00451</td>
+      <th>UX Wireframes</th>
+      <td>Adobe</td>
+      <td>56789765</td>
+      <td>19 Dec 2016</td>
+      <td>
+        <span class="label is-blue">
+          Pending invoice
+        </span>
+      </td>
+      <td>$456</td>
+      <td>
+        <a href="#" class="button is-blue">Manage</a>
+        <a href="#" class="button is-white">Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        <a href="#" class="button is-blue">Manage</a>
+        <a href="#" class="button is-white">Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<p><br>
+<br></p>
+<table class="table is-large">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Invoice Subject</th>
+      <th>Client</th>
+      <th>VAT No.</th>
+      <th>Created</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>00450</td>
+      <th>
+        Design Works
+        <span>
+          Google
+        </span>
+      </th>
+      <td>
+        <span class="td-main">
+          Carlson Limited
+        </span>
+        <span class="td-sub">
+          Google
+        </span>
+      </td>
+      <td>87956621</td>
+      <td>15 Dec 2016</td>
+      <td>
+        <span class="label is-green">
+          Due in 1 week
+        </span>
+      </td>
+      <td>$973</td>
+      <td>
+        <a href="#" class="button is-blue">Manage</a>
+        <a href="#" class="button is-white">Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00451</td>
+      <th>UX Wireframes</th>
+      <td>Adobe</td>
+      <td>56789765</td>
+      <td>19 Dec 2016</td>
+      <td>
+        <span class="label is-blue">
+          Pending invoice
+        </span>
+      </td>
+      <td>$456</td>
+      <td>
+        <a href="#" class="button is-blue">Manage</a>
+        <a href="#" class="button is-white">Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        <a href="#" class="button is-blue">Manage</a>
+        <a href="#" class="button is-white">Actions</a>
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+    <tr>
+      <td>00453</td>
+      <th>New dashboard</th>
+      <td>Bluework</td>
+      <td>98765456</td>
+      <td>25 Dec 2016</td>
+      <td>
+        <span class="label is-black">
+          Delayed
+        </span>
+      </td>
+      <td>$1,428</td>
+      <td>
+        No action
+      </td>
+    </tr>
+
+  </tbody>
+</table>
               </div>
 
 
@@ -1654,6 +1977,56 @@
   <span class="badge is-blue">3</span>
 </span></p>
 <p><br>
+<br></p>
+              </div>
+
+
+            </div>
+            <div class="section" id="Elements-Images" data-section="Elements" data-heading="Images">
+              <div class="comment">
+                <h3 class="is-text-h1">
+                  Elements/Images
+                </h3>
+                <p><br>
+<br></p>
+<figure class="image is-128x128">
+  <img src="https://bulma.io/images/placeholders/128x128.png">
+</figure>
+
+<p><br>
+<br>
+<img class="image" src="https://bulma.io/images/placeholders/128x128.png"></p>
+<p><br>
+<br>
+<img class="image is-circle" src="https://bulma.io/images/placeholders/128x128.png"></p>
+<p><br>
+<br>
+<img class="image is-16x16" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-24x24" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-32x32" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-48x48" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-64x64" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-96x96" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-128x128" src="https://bulma.io/images/placeholders/128x128.png">
+<br>
+<br>
+<img class="image is-circle is-16x16" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-24x24" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-32x32" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-48x48" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-64x64" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-96x96" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-circle is-128x128" src="https://bulma.io/images/placeholders/128x128.png">
+<br>
+<br>
+<img class="image is-rounded is-16x16" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-24x24" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-32x32" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-48x48" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-64x64" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-96x96" src="https://bulma.io/images/placeholders/128x128.png">
+<img class="image is-rounded is-128x128" src="https://bulma.io/images/placeholders/128x128.png">
+<br>
 <br></p>
               </div>
 
